@@ -107,7 +107,7 @@ Click on the + icon and choose python as your official programming language.
 
 Once, you see your python setup, the world is your oyster. If you have reached this step, you are officially ready to code.
 
-![step_3](https://user-images.githubusercontent.com/15992276/151670851-e0e6a0ef-574b-419a-866a-8b1dd41abadd.png)
+![step_3](https://user-images.githubusercontent.com/15992276/151670851-e0e6a0ef-574b-419a-866a-8b1Add41abadd.png)
 
 
 
@@ -120,8 +120,57 @@ Let's start with our first python code.
 
 ![Hello_World](https://user-images.githubusercontent.com/15992276/151672026-086d18bc-0092-47a4-9495-45665b0f9b89.png)
 
-If you got this, welcome to the world of software engineering. From hereon, we take a deep dive.
+
+A function is code that performs some task and can be called by a name. Here we used the print() function
+with the text "Hello, World" as input.
+
+```python
+print("Hello World")
+```
+The paranthesis tells Python that it is a function (print in our example) and python has to call it with the input "Hello World".
+The quotation marks indicate that "Hello World" is just text and not something else.
+
+### Mess Things up
+
+Everybody makes mistakes—especially while programming! In case you haven’t made any mistakes yet, let’s get a head start and mess something up on purpose to see what happens. Mistakes in programs are called errors. You’ll experience two main types of errors: syntax errors and runtime errors.
+
+### Syntax Errors
+
+A syntax error occurs when you write code that isn’t allowed in the Python language.
+Let’s create a syntax error by removing the last quotation mark from the code in the hello_world.py ﬁle that you created in the last section:
+
+![Syntax_Error](https://user-images.githubusercontent.com/15992276/151674721-7158e7e3-cc62-40d1-bc51-c95fb683d324.png)
 
 
-From hereon, I am only going to demo code in the local python environment, but you can use either your terminal or REPT.it to practice and see some results.
+```python
+EOL while scanning string literal.
+```
+There are two terms in this message that may be unfamiliar:
+1. A string literal is text enclosed in quotation marks.
+World" is a string literal.
+"Hello,
+2. EOL stands for end of line.
+
+So, the message tells you that Python got to the end of a line while reading a string literal. String literals must be terminated with a quo-tation mark before the end of a line.
+
+### Runtime Errors
+
+In contrast, runtime errors only occur while a program is runnig. If you used REPT.it, the code editor might have caugh the syntax error by showing you a squiggly line.
+
+![Runtime_Error](https://user-images.githubusercontent.com/15992276/151674712-c66f644d-945f-4cac-a029-2a3c9eda538a.png)
+
+
+Whenever an error occurs, Python stops executing the program and displays several lines of text called a traceback. The traceback shows useful information about the error
+
+![RuntimeError_2](https://user-images.githubusercontent.com/15992276/151674713-fe426e91-6517-43c0-9abc-16b346dcc3bd.png)
+
+Tracebacks are best read from the bottom up:
+
+- The last line of the traceback tells you the name of the error and
+the error message. In this case, a `NameError` occurred because the name `Hello` is not deﬁned anywhere.
+
+- The second to last line shows you the code that produced the error. There’s only one line of code in hello_world.py, so it’s not hard to guess where the problem is. This information is more helpful for
+larger files.
+
+- The third to last line tells you the name of the ﬁle and the line number so you can go to the exact spot in your code where the error occurred.
 
