@@ -199,9 +199,9 @@ the assignment operator (=) . The = operator takes the value to the right of the
 
 On the ﬁrst line, you create a variable named greeting and assign it the value "Hello, World" using the = operator. `print(greeting)` displays the output Hello, World because Python looks for the name greeting, ﬁnds that it’s been assigned the value "Hello,World", and replaces the variable name with its value before calling the function. `
 
-If you hadn’t executed greeting = "Hello, World" before executing then you would have seen a `NameError` like you did when you tried to execute `print(Hello,World)` in the previous section.
+If you hadn’t executed `greeting = "Hello, World"` before executing then you would have seen a `NameError` like you did when you tried to execute `print(Hello,World)` in the previous section.
 
-***Note
+***Note***
 Although `=` looks like the equals sign from mathematics, it has a diﬀerent meaning in Python. This distinction is important and can be a source of frustration for beginner programmers.
 Just remember, whenever you see the = operator, whatever is to the right of it is being assigned to a variable on the left.
 
