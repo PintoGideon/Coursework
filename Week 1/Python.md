@@ -201,7 +201,7 @@ On the ﬁrst line, you create a variable named greeting and assign it the value
 
 If you hadn’t executed `greeting = "Hello, World"` before executing then you would have seen a `NameError` like you did when you tried to execute `print(Hello,World)` in the previous section.
 
-***Note***
+***Note***:
 Although `=` looks like the equals sign from mathematics, it has a diﬀerent meaning in Python. This distinction is important and can be a source of frustration for beginner programmers.
 Just remember, whenever you see the = operator, whatever is to the right of it is being assigned to a variable on the left.
 
