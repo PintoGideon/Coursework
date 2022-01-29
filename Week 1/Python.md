@@ -112,8 +112,6 @@ Once, you see your python setup, the world is your oyster. If you have reached t
 
 
 
-
-
 ### Learning Python
 
 Let's start with our first python code.
@@ -173,4 +171,37 @@ the error message. In this case, a `NameError` occurred because the name `Hello`
 larger files.
 
 - The third to last line tells you the name of the ﬁle and the line number so you can go to the exact spot in your code where the error occurred.
+
+
+### Create a variable
+
+
+In python, `variables` are names that can be assigned a value and then used to refer to that value throughout your code
+
+1. Variables keep values accessible: For example, you can assign the result of some time-consuming operation to a variable so that your program doesn’t have to perform the operation each time
+you need to use the result.
+
+2. Variables give values context: The number 28 could mean lots of diﬀerent things, such as the number of students in a class, the number of times a user has accessed a website, and so on. Giving the value 28 a name like `num_students` makes the meaning of the value clear.
+
+It's important to learn how to use variables in your code, as well as some of the conventions Python programmers follow when choosing names for variables.
+
+### The Assignment Operator
+
+An operator is a symbol, such as +, that performs an operation on one or more values. For example, the + operator takes two numbers, one to the left of the operator and one to the right, and adds them
+together. Values are assigned to variable names using a special symbol called
+the assignment operator (=) . The = operator takes the value to the right of the operator and assigns it to the name on the left.
+
+
+
+![Hello_World](https://user-images.githubusercontent.com/15992276/151675412-f5b8a1a8-5044-4bf4-b68f-d12d8775d1dd.png)
+
+
+
+On the ﬁrst line, you create a variable named greeting and assign it the value "Hello, World" using the = operator. `print(greeting)` displays the output Hello, World because Python looks for the name greeting, ﬁnds that it’s been assigned the value "Hello,World", and replaces the variable name with its value before calling the function. `
+
+If you hadn’t executed greeting = "Hello, World" before executing then you would have seen a `NameError` like you did when you tried to execute `print(Hello,World)` in the previous section.
+
+***Note
+Although `=` looks like the equals sign from mathematics, it has a diﬀerent meaning in Python. This distinction is important and can be a source of frustration for beginner programmers.
+Just remember, whenever you see the = operator, whatever is to the right of it is being assigned to a variable on the left.
 
