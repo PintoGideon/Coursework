@@ -31,11 +31,13 @@ It's important that you install python correctly (https://techsviewer.com/how-to
 
 ![Python_Installer](https://user-images.githubusercontent.com/15992276/151674132-aafddc21-d4af-458f-9ac7-5325664c4137.png)
 
+Press Continue a few times until you are asked to agree to the software license agreement. Then click Agree. You’ll be shown a window that tells you where Python will be installed and how much space it will take. You most likely don’t want to change the default location, so go ahead and click Install to start the installation.
+
 
 ![shell_window](https://user-images.githubusercontent.com/15992276/151674144-a49d24f4-6809-49cc-969a-46f86f737cad.png)
 
 
-Press Continue a few times until you are asked to agree to the software license agreement. Then click Agree. You’ll be shown a window that tells you where Python will be installed and how much space it will take. You most likely don’t want to change the default location, so go ahead and click Install to start the installation.
+
 
 ### Open IDLE
 You can open IDLE in three steps:
@@ -50,7 +52,7 @@ The >>> symbol that you see is called a prompt. Whenever you see
 this, it means that Python is waiting for you to give it some instruc-
 tions.
 
-You just downloaded a tranlsation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
+You just downloaded a translation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
 
 *Advanced*
 Reference Article: https://faun.pub/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
@@ -75,8 +77,6 @@ A widely used way to run python code is through an interactive session. To start
 python installation. On a Mac system, it is very straight-forward. All you need to do is open Launchpad and search for Terminal, and in the terminal, type Python and boom, it will give you an output with the Python version.
 
 ![Python_Program](https://user-images.githubusercontent.com/15992276/151667886-eafd6102-92b1-4f87-bc52-6d39353e56a0.png)
-
-The standard prompt for the interactive mode is >>>, so as soon as you see these characters, you’ll know you are in. Now, you can write and run Python code as you wish, with the only drawback being that when you close the session, your code will be gone.
 
 When you work interactively, every expression and statement you type in is evaluated and executed immediately:
 
