@@ -205,3 +205,61 @@ If you hadn’t executed `greeting = "Hello, World"` before executing then you w
 Although `=` looks like the equals sign from mathematics, it has a diﬀerent meaning in Python. This distinction is important and can be a source of frustration for beginner programmers.
 Just remember, whenever you see the = operator, whatever is to the right of it is being assigned to a variable on the left.
 
+
+Variable names are case sensitive, so a variable named greeting is not the same as a variable named Greeting. For instance, the following
+code produces a `NameError:`
+
+```python
+>>> greeting = "Hello, World"
+>>> print(Greeting)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'Greeting' is not defined
+```
+
+### Rules for valid variable names
+
+Variable names can be as long or as short as you like, but there are a few rules that you must follow. Variable names may contain upper-case and lowercase letters (A–Z, a–z), digits (0–9), and underscores
+(_), but they cannot begin with a digit.
+
+For example, each of the following is a valid Python variable name:
+
+- string1
+- _a1p4a
+- list_of_names (Most preferred way)
+
+The following aren’t valid variable names because they start with a
+digit:
+
+- 9lives
+- 99_balloons
+- 2beOrNot2Be1
+
+Just because a variable name is valid doesn’t necessarily mean that it’s a good name. Choosing a good name for a variable can be surprisingly diﬃcult. For-tunately, there are some guidelines that you can follow to help you choose better names.
+
+### Descriptive Names Are Better Than Short Names
+Descriptive variable names are essential, especially for complex programs. Writing descriptive names often requires using multiple words. Don’t be afraid to use long variable names.
+
+In the following example, the value 3600 is assigned to the variable s:
+
+```python
+s = 3600
+```
+
+The name s is totally ambiguous. Using a full word makes it a lot easier to understand what the code means:
+```python
+seconds = 3600
+```
+
+seconds is a better name than s because it provides more context. But it still doesn’t convey the full meaning of the code. Is 3600 the number of seconds it takes for a process to ﬁnish, or is it the length of a movie? There’s no way to tell.
+
+The following name leaves no doubt about what the code means:
+
+```python
+seconds_per_hour = 3600
+```
+
+When you read the above code, there’s no question that 3600 is the number of seconds in an hour. seconds_per_hour takes longer to type than both the single letter s and the word seconds, but the payoﬀ in
+clarity is massive.
+
+Although naming variables descriptively means using longer variable names, you should avoid using excessively long names. A good rule of thumb is to limit variable names to three or four words maximum.
