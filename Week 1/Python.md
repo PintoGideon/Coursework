@@ -22,12 +22,12 @@ In order for us to be able to write Python code, we can't do it anywhere. If you
 ### Python Interpreter
 
 How do I get the translation service? Well, you download it on your machine.
-Download Python on your machine: https://www.python.org/downloads/
+Download Python on your machine: (https://www.python.org/downloads/)
 
 When you click on Downloads, and dowload python on your machine, you are actually downloading this.
-https://github.com/python/cpython
+(https://github.com/python/cpython)
 
-It's important that you install python correctly. https://techsviewer.com/how-to-install-python-on-mac/
+It's important that you install python correctly (https://techsviewer.com/how-to-install-python-on-mac/)
 
 You just download a tranlsation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
 
@@ -65,7 +65,6 @@ To exit interactive mode, you can use one of the following options:
 - The Ctrl+Z and Enter key combination on Windows, or just Ctrl+D on Unix-like systems
 
 
-
 ### REPL
 
 In the python world, it's easy to get overwhelmed by the different developer tools out there. We will learn each of them as we go. Right now, I want to take the path of least resistance and get you'll up and running.
@@ -80,7 +79,7 @@ Click on the + icon and choose python as your official programming language.
 
 ![step_2](https://user-images.githubusercontent.com/15992276/151670850-10bca37b-233e-426a-ba9e-fca2b54d2410.png)
 
-Once, you see your python setup, the world is your oyster. If you have reached this step, you are officially ready to code
+Once, you see your python setup, the world is your oyster. If you have reached this step, you are officially ready to code.
 
 ![step_3](https://user-images.githubusercontent.com/15992276/151670851-e0e6a0ef-574b-419a-866a-8b1dd41abadd.png)
 
