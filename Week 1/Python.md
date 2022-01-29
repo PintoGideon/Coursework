@@ -263,3 +263,18 @@ When you read the above code, there’s no question that 3600 is the number of s
 clarity is massive.
 
 Although naming variables descriptively means using longer variable names, you should avoid using excessively long names. A good rule of thumb is to limit variable names to three or four words maximum.
+
+***Note***: In Python, however, it’s common to write variable names in lower_case_with_underscores. In this system, you leave every letter in lowercase and separate each word with an underscore. For
+instance, num_students and list_of_names are written in lower_case_-with_underscores.
+
+
+
+### Bored ?
+
+If at this point, you are bored and wish to motivate yourself, watch this video from David Malan, a professor at Harvard.
+
+https://www.youtube.com/watch?v=ZEQh45W_UDo
+
+This will give you a glimpse into what's coming ahead even if you don't understand all of it yet.
+
+
