@@ -29,7 +29,33 @@ When you click on Downloads, and dowload python on your machine, you are actuall
 
 It's important that you install python correctly (https://techsviewer.com/how-to-install-python-on-mac/)
 
-You just download a tranlsation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
+![Python_Installer](https://user-images.githubusercontent.com/15992276/151674132-aafddc21-d4af-458f-9ac7-5325664c4137.png)
+
+
+![shell_window](https://user-images.githubusercontent.com/15992276/151674144-a49d24f4-6809-49cc-969a-46f86f737cad.png)
+
+
+Press Continue a few times until you are asked to agree to the software license agreement. Then click Agree. You’ll be shown a window that tells you where Python will be installed and how much space it will take. You most likely don’t want to change the default location, so go ahead and click Install to start the installation.
+
+### Open IDLE
+You can open IDLE in three steps:
+1. Open Finder and click Applications.
+2. Double-click the Python 3.8 folder.
+3. Double-click the IDLE icon.
+IDLE opens a Python shell in a new window. The Python shell is an
+interactive environment that allows you to type in Python code and
+execute it immediately. It’s a great way to get started with Python!
+
+The >>> symbol that you see is called a prompt. Whenever you see
+this, it means that Python is waiting for you to give it some instruc-
+tions.
+
+You just downloaded a tranlsation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
+
+*Advanced*
+Reference Article: https://faun.pub/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
+
+
 
 ![Python_Interpreter](https://user-images.githubusercontent.com/15992276/151667884-2efa50c7-3ca5-4f0e-940e-01f2916afece.png)
 
@@ -65,7 +91,7 @@ To exit interactive mode, you can use one of the following options:
 - The Ctrl+Z and Enter key combination on Windows, or just Ctrl+D on Unix-like systems
 
 
-### REPL
+### REPL (A great alternative environment to get started)
 
 In the python world, it's easy to get overwhelmed by the different developer tools out there. We will learn each of them as we go. Right now, I want to take the path of least resistance and get you'll up and running.
 
@@ -83,4 +109,19 @@ Once, you see your python setup, the world is your oyster. If you have reached t
 
 ![step_3](https://user-images.githubusercontent.com/15992276/151670851-e0e6a0ef-574b-419a-866a-8b1dd41abadd.png)
 
+
+
+
+
+
+### Learning Python
+
+Let's start with our first python code.
+
+![Hello_World](https://user-images.githubusercontent.com/15992276/151672026-086d18bc-0092-47a4-9495-45665b0f9b89.png)
+
+If you got this, welcome to the world of software engineering. From hereon, we take a deep dive.
+
+
+From hereon, I am only going to demo code in the local python environment, but you can use either your terminal or REPT.it to practice and see some results.
 
