@@ -2,7 +2,7 @@
 
 Programming in lay man terms is a way for us to give instructions to the computer. Computers don't understand human language for that matter. Computer's speak in ones and zeros. But writing ones and zeros would be difficult for us. It's hard for us to communicate like that.
 
-Humans have developed programming languages that are between human language and machine language.
+Humans have developed programming languages that are between the human language and machine language.
 
 
 Let's say you want to book a flight through a website. As a user , you want to pull up a list of flights for a particular destination on the screen. The web page is usually coded in Python or Javascript by a developer. We will call it source code. 
@@ -12,7 +12,7 @@ How does the source code in a file convert into zeros and one's so that our mach
 ### What is a translator? 
 
 Well, the translator is another program written by a user. It can either be a compiler or an interpreter.
-Python usually uses an interpreter. An interpreter goes line by line through your source code and executes it on our machine. Compilers on the other hand take your code all at once and then translates that into machine code. The differences between these two is a bit complicated and can be covered at a later point.
+Python usually uses an interpreter. An interpreter goes line by line through your source code and executes it on our machine. Compilers on the other hand take your code all at once and translates it into machine code. The differences between these two are a bit complicated and can be covered at a later point.
 
 ![Compilers](https://user-images.githubusercontent.com/15992276/151667882-3478dca0-3510-4adc-b223-4911936b9efd.png)
 
@@ -48,20 +48,18 @@ IDLE opens a Python shell in a new window. The Python shell is an
 interactive environment that allows you to type in Python code and
 execute it immediately. It’s a great way to get started with Python!
 
-The >>> symbol that you see is called a prompt. Whenever you see
-this, it means that Python is waiting for you to give it some instruc-
-tions.
+The ```>>>``` symbol that you see is called a prompt. Whenever you see
+this, it means that Python is waiting for you to give it some instructions.
 
-You just downloaded a translation service called as cypthon. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
+You just downloaded a translation service called as `cypthon`. Remember, I told you that the translation service (cypthon) is a layer of software that works between your program and your computer hardware to get your code running.. There are other translation services out there written in different langauges that achieve the same result. When you download from Python, you are actually downloading the translation service (The interpreter).
 
 *Advanced*
 Reference Article: https://faun.pub/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
 
 
-
 ![Python_Interpreter](https://user-images.githubusercontent.com/15992276/151667884-2efa50c7-3ca5-4f0e-940e-01f2916afece.png)
 
-Just to come full circle, You write python code in a file, the interpreter takes it and converts it into byte code that this is close to a machine readable code, it then uses the CPython Virtual Machine which runs the byte code to convert it into zeroes and ones. The CVM is not an isolated component of Python. It’s just part of the Python system you’ve installed on your machine. Technically, the PVM is the last step of what is called the Python interpreter.
+Just to come full circle, You write python code in a file, the interpreter takes it and converts it into byte code that is close to machine readable code, it then uses the CPython Virtual Machine which runs the byte code to convert it into zeroes and ones. The CVM is not an isolated component of Python. It’s just part of the Python system you’ve installed on your machine. Technically, the PVM is the last step of what is called the Python interpreter.
 
 The whole process to run Python scripts is known as the Python Execution Mode
 
@@ -153,12 +151,12 @@ So, the message tells you that Python got to the end of a line while reading a s
 
 ### Runtime Errors
 
-In contrast, runtime errors only occur while a program is runnig. If you used REPT.it, the code editor might have caugh the syntax error by showing you a squiggly line.
+In contrast, runtime errors only occur while a program is runnig. If you used REPT.it, the code editor might have caught the syntax error by showing you a squiggly line.
 
 ![Runtime_Error](https://user-images.githubusercontent.com/15992276/151674712-c66f644d-945f-4cac-a029-2a3c9eda538a.png)
 
 
-Whenever an error occurs, Python stops executing the program and displays several lines of text called a traceback. The traceback shows useful information about the error
+Whenever an error occurs, Python stops executing the program and displays several lines of text called a `traceback`. The traceback shows useful information about the error
 
 ![RuntimeError_2](https://user-images.githubusercontent.com/15992276/151674713-fe426e91-6517-43c0-9abc-16b346dcc3bd.png)
 
@@ -167,7 +165,7 @@ Tracebacks are best read from the bottom up:
 - The last line of the traceback tells you the name of the error and
 the error message. In this case, a `NameError` occurred because the name `Hello` is not deﬁned anywhere.
 
-- The second to last line shows you the code that produced the error. There’s only one line of code in hello_world.py, so it’s not hard to guess where the problem is. This information is more helpful for
+- The second to last line shows you the code that produced the error. There’s only one line of code in `hello_world.py`, so it’s not hard to guess where the problem is. This information is more helpful for
 larger files.
 
 - The third to last line tells you the name of the ﬁle and the line number so you can go to the exact spot in your code where the error occurred.
@@ -275,6 +273,6 @@ If at this point, you are bored and wish to motivate yourself, watch this video 
 
 https://www.youtube.com/watch?v=ZEQh45W_UDo
 
-This will give you a glimpse into what's coming ahead even if you don't understand all of it yet.
+This will give you a glimpse into what's coming next even if you don't understand all of it yet.
 
 
