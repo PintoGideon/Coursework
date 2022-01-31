@@ -350,12 +350,12 @@ Type the following into IDLE’s interactive window:
 <class 'str'>
 ```
 
-The output <class 'str'> indicates that the value "Hello, World" is an instance of the str data type. That is, "Hello, World" is a string.
+The output <class 'str'> indicates that the value `"Hello, World"` is an instance of the `str` data type. That is, "Hello, World" is a string.
 
 
-***Note: For now, you can think of the word ``class`` as a synonym for data type, although it actually refers to something more speciﬁc (More on this later).
+***Note:*** For now, you can think of the word ``class`` as a synonym for data type, although it actually refers to something more speciﬁc (More on this later).
 
-type() also works for values that have been assigned to a variable:
+`type()` also works for values that have been assigned to a variable:
 
 ```python
 >>> phrase = "Hello, World"
