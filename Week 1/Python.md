@@ -422,7 +422,7 @@ variable:
 3
 ```
 
-First, you assign the string "abc" to the variable letters. Then you use `len()` to get the length of letters, which is 3.
+First, you assign the string ```"abc"``` to the variable letters. Then you use `len()` to get the length of letters, which is 3.
 
 
 
