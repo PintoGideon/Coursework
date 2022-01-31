@@ -409,8 +409,8 @@ She said, "What time is it?"
 ```
 ### Last, but not least
 
-The number of characters contained in a string, including spaces, is called the length of the string. For example, the string ```"abc"``` has a length of 3, and the string "Don't Panic" has a length of 11.
-Python has a built-in len() function that you can use to determine the length of a string. To see how it works, type the following into IDLE’sinteractive window:
+The number of characters contained in a string, including spaces, is called the length of the string. For example, the string ```"abc"``` has a length of 3, and the string ```"Don't Panic"``` has a length of 11.
+Python has a built-in len() function that you can use to determine the length of a string. To see how it works, type the following into IDLE’s interactive window:
 
 ```python
 >>> len("abc")
