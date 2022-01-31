@@ -276,3 +276,153 @@ https://www.youtube.com/watch?v=ZEQh45W_UDo
 This will give you a glimpse into what's coming next even if you don't understand all of it yet.
 
 
+### Variable Inspection
+
+Before, we dive deep, let's learn to inspect values in the terminal.
+
+```python
+>>> greeting = "Hello, World"
+>>> greeting
+'Hello, World'
+```
+When you press `Enter` after typing greeting a second time, Python prints the string literal assigned to greeting even though you didn’t use the print() function. This is called variable inspection.
+
+Now print the string assigned to greeting using the print() function:
+
+```python
+>>> print(greeting)
+Hello, World
+```
+
+Are you seeing the difference?
+When you type the variable name greeting and press Enter , Python prints the value assigned to the variable as it appears in your code.
+
+You assigned the string literal "Hello, World" to greeting, which is why 'Hello, World' is displayed with quotation marks.
+
+On the other hand, `print()` displays a more human-readable representation of the variable’s value which, for string literals, means displaying the text without quotation marks.
+
+```python
+>>> x = 2
+>>> x
+2
+>>> print(x)
+2
+```
+Here, you assign the number 2 to x. Both using print(x) and inspecting x display output without quotation marks because 2 is a number and not text. In most cases, though, variable inspection gives you more
+useful information than print().
+
+```python
+>>> x = 2
+>>> y = "2"
+>>> print(x)
+2
+>>> print(y)
+2
+
+```
+However, inspecting x and y shows the diﬀerence between each vari-
+able’s value:
+
+```python
+>>> x
+2
+>>> y
+'2'
+
+```
+
+The key takeaway here is that print() displays a readable representation of a variable’s value, while variable inspection displays the value as it appears in the code.
+Keep in mind that variable inspection only works in the interactive window (More on this later).
+
+
+### String and String Methods (A gentle Introduction)
+
+
+Strings are one of the fundamental Python data types. The term data type refers to what kind of data a value represents. Strings are used to represent text.
+
+We say that strings are a *fundamental* data type because they can’t be broken down into smaller values of a diﬀerent type. Not all data types are fundamental. You’ll learn about compound data types later.
+
+The string data type has a special abbreviated name in Python: ```python str```. You can see this by using `type()`, which is a function used to determine the data type of a given value.
+
+Type the following into IDLE’s interactive window:
+```python
+>>> type("Hello, World")
+<class 'str'>
+```
+
+The output <class 'str'> indicates that the value "Hello, World" is an instance of the str data type. That is, "Hello, World" is a string.
+
+
+***Note: For now, you can think of the word ``class`` as a synonym for data type, although it actually refers to something more speciﬁc (More on this later).
+
+type() also works for values that have been assigned to a variable:
+
+```python
+>>> phrase = "Hello, World"
+>>> type(phrase)
+<class 'str'>
+
+```
+
+### Three important things to remember about strings.
+
+1. Strings contain individual letters or symbols called characters.
+2. Strings have a length, deﬁned as the number of characters the string contains.
+3. Characters in a string appear in a sequence, which means that each character has a numbered position in the string.
+As you’ve already seen, you can create a string by surrounding some text with quotation marks:
+
+```python
+string1 = 'Hello, World'
+string2 = "1234"
+```
+You can use either single quotes (string1) or double quotes (string2) to create a string as long as you use the same type at the beginning and end of the string.
+
+***Important to note:***
+
+The quotes surrounding a string are called `delimiters` because they tell Python where a string begins and where it ends. When one type of quotes is used as the delimiter, the other type can be used inside the string:
+
+```python
+string3 = "We're #1!"
+string4 = 'I said, "Put it over by the llama."'
+```
+
+After Python reads the ﬁrst delimiter, it considers all the characters after it part of the string until it reaches a second matching delimiter. This is why you can use a single quote in a string delimited by double
+quotes, and vice versa. If you try to use double quotes inside a string delimited by double
+quotes, you’ll get an error:
+
+```python
+>>> text = "She said, "What time is it?""
+File "<stdin>", line 1
+text = "She said, "What time is it?""
+^
+SyntaxError: invalid syntax
+```
+
+
+Python throws a `SyntaxError` because it thinks the string ends after the second ", and it doesn’t know how to interpret the rest of the line. If you need to include a quotation mark that matches the delimiter in-
+side a string, then you can escape the character using a backslash:
+```python
+>>> text = "She said, "What time is it?""
+>>> print(text)
+She said, "What time is it?"
+
+```
+### Last, but not least
+
+The number of characters contained in a string, including spaces, is called the length of the string. For example, the string ```"abc"``` has a length of 3, and the string "Don't Panic" has a length of 11.
+Python has a built-in len() function that you can use to determine the length of a string. To see how it works, type the following into IDLE’sinteractive window:
+
+```python
+>>> len("abc")
+3
+You can also use len() to get the length of a string that’s assigned to a
+variable:
+>>> letters = "abc"
+>>> len(letters)
+3
+```
+
+First, you assign the string "abc" to the variable letters. Then you use `len()` to get the length of letters, which is 3.
+
+
+
