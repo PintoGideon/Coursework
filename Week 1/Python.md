@@ -309,7 +309,7 @@ On the other hand, `print()` displays a more human-readable representation of th
 2
 ```
 Here, you assign the number 2 to x. Both using print(x) and inspecting x display output without quotation marks because 2 is a number and not text. In most cases, though, variable inspection gives you more
-useful information than print().
+useful information than `print()`.
 
 ```python
 >>> x = 2
@@ -331,7 +331,7 @@ able’s value:
 
 ```
 
-The key takeaway here is that print() displays a readable representation of a variable’s value, while variable inspection displays the value as it appears in the code.
+The key takeaway here is that `print()` displays a readable representation of a variable’s value, while variable inspection displays the value as it appears in the code.
 Keep in mind that variable inspection only works in the interactive window (More on this later).
 
 
@@ -350,7 +350,7 @@ Type the following into IDLE’s interactive window:
 <class 'str'>
 ```
 
-The output <class 'str'> indicates that the value `"Hello, World"` is an instance of the `str` data type. That is, "Hello, World" is a string.
+The output <class 'str'> indicates that the value `"Hello, World"` is an instance of the `str` data type. That is, `"Hello, World"` is a string.
 
 
 ***Note:*** For now, you can think of the word ``class`` as a synonym for data type, although it actually refers to something more speciﬁc (More on this later).
