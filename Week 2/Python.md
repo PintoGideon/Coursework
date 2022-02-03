@@ -97,7 +97,7 @@ If you haven’t created a `project.py` file in the `pyworkshop` directory, now 
 
 Now that you’ve learned the necessary keyboard shortcuts, use Quick Open with Ctrl+P or ⌘P to open the project.py file.
 
-*Info:* If you haven’t installed the Python extension at this point, you’ll get a pop-up recommending you install it for this type of file. Please install it now, and reload VS Code when prompted to load the extension.
+***Info:*** If you haven’t installed the Python extension at this point, you’ll get a pop-up recommending you install it for this type of file. Please install it now, and reload VS Code when prompted to load the extension.
 
 ### Configuring the Interpreter
 
@@ -135,10 +135,11 @@ Running this command should bring up a new pane at the bottom of your editor tha
 
 Let’s get familiar with the REPL.
 
-# - comments start with #. They will be ignored.
->>> - this is the prompt. In example code, lines starting with >>> means they are input
+***comments start with #. They will be ignored.***
+
+`>>>` - this is the prompt. In example code, lines starting with `>>>` means they are input
 lines that don’t start with either of these are output that was produced by running input from the prompt
-by typing these line of code at the >>> prompt, and press enter after each line.
+by typing these line of code at the `>>>` prompt, and press enter after each line.
 
 ```python
 # My REPL. Don't copy the >>> symbols, that means the code was entered
@@ -155,10 +156,7 @@ In the REPL, we can see the value of any variable just by entering it into the p
 You can copy and paste code into the REPL, even multiple lines of code at once. Copy the three lines below and paste them into your REPL. What’s the result?
 
 
-*** Gideon, why have we wasted time setting up so many different environments? Well, a lot of people waste
-too much time in the setup and setting the right environment. Why not get the boring part out
-of the way, and just focus on the learning. There are a lot of internet articles out there and I want
-to funnel all the content to a battle test environment which is more closed to a real-world scenario"***
+*** Gideon, why have we wasted time setting up so many different environments? Well, a lot of people waste too much time in the setup and setting the right environment. Why not get the boring part out of the way, and just focus on the learning. There are a lot of internet articles out there and I want to funnel all the content to a battle test environment which is more closed to a real-world scenario" ***
 
 
 ### Running Code
@@ -166,11 +164,11 @@ to funnel all the content to a battle test environment which is more closed to a
  We’ll mostly be working with Python program files in the course with the occasional use of REPL.
 
 ### Creating Python Files with the *.py extension
-You know a file is a Python program when it ends with a .py extension.
+You know a file is a Python program when it ends with a `.py` extension.
 
-To create a new file in VS Code, and ⌘N (command + N) on Mac OS.
+To create a new file in VS Code, and `⌘N (command + N)` on Mac OS.
 
-This will open a new file. Next, save the file with a .py extension. Create a new simple Python program in a file called hello.py in your pyworkshop directory with the following contents:
+This will open a new file. Next, save the file with a `.py` extension. Create a new simple Python program in a file called `hello.py` in your pyworkshop directory with the following contents:
 
 ```python
 # In file: hello.py
@@ -190,7 +188,7 @@ If you already had your Python REPL open, you’ll need to select a terminal wit
 ![zsh](https://user-images.githubusercontent.com/15992276/152420578-530674da-e1a4-4156-ba0d-040e3609edaf.png)
 ![vs_code_python](https://user-images.githubusercontent.com/15992276/152420579-df8fc726-9308-445c-96ea-ebe0a5d0ac31.png)
 
-Running The File
+### Running The File
 Once you’ve opened your hello.py file and selected your new terminal window, open the VS Code command palette.
 
 ***Note** Open the command palette with Ctrl+Shift+P on Windows and Linux, and ⌘⇧P (command + shift + P) on Mac OS.
