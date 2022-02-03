@@ -5,6 +5,7 @@ Visual Studio Code (or VS Code) is a free and open source graphical code editor.
 ### Installation
 
 Download Visual Studio Code: https://code.visualstudio.com/download
+and the 
 Python Extension for Visual Studio Code: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
 ### Advantages
@@ -14,14 +15,12 @@ You’ll want to use a code editor for your Python projects as your projects gro
 Code editors also offer syntax highlighting, syntax checking, auto-completion, and more.
 
 ### Creating a Virtual Environment
-A Virtual Environment in Python is a self-contained directory that contains a Python installation for a particular version of the language.
-
-It’s a very useful way to make sure that we’re using the right Python version when we’re working on a particular project.
+A Virtual Environment in Python is a self-contained directory that contains a Python installation for a particular version of the language. It’s a very useful way to make sure that we’re using the right Python version when we’re working on a particular project.
 
 Let’s create a project directory and a Python Virtual Environment
 
 Open a terminal window. Type the following.
-(Do not type the $ character, that signifies a prompt.)
+(Do not type the `$` character, that signifies a prompt.)
 
 ```shell
 $ cd
@@ -31,7 +30,7 @@ $ python3.9 -m venv env
 $ source env/bin/activate
 
 ```
-*Note*: source env/bin/activate is how you activate your virtual environment on Mac or Linux. You’ll want to do that each time you enter this Python project directory from a new shell.
+***Note***: `source env/bin/activate` is how you activate your virtual environment on Mac or Linux. You’ll want to do that each time you enter this Python project directory from a new shell.
 
 ```shell
 (env) $
@@ -74,18 +73,18 @@ source env/bin/activate
 ### Keyboard Shortcuts
 To get started with VS Code, you only need to remember two keyboard shortcuts.
 
-#1 : Show Command Palette
-⌘⇧P (command + shift + P) on Mac OS.
+1. Show Command Palette
+`⌘⇧P (command + shift + P)` on Mac OS.
 
 The command palette lets you search and run any of the commands available within VS Code. If you don’t know how to do something, the command palette will usually point you in the right direction.
 
 The command palette is how you’ll navigate VS Code.
 
-#2: Quick Open, Go to File
-Open Quick Open with Ctrl+P on Windows and Linux, and ⌘P(command + P) on Mac OS.
+2. Quick Open, Go to File
+Open Quick Open with `Ctrl+P` on Windows and Linux, and `⌘P(command + P)` on Mac OS.
 Quick open is how you’ll navigate your codebase and files.
 
-*To dismiss either dialog, press the Escape key. Write these two shortcuts down, because we’ll be using them frequently for the rest of the course.*
+***To dismiss either dialog, press the Escape key. Write these two shortcuts down, because we’ll be using them frequently for the rest of the course.***
 
 
 ### Working with Python and VS code
