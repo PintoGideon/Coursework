@@ -91,7 +91,7 @@ Quick open is how you’ll navigate your codebase and files.
 
 Once we open our first Python file in VS Code, we’ll see some configuration pop-ups. For the time being, *don’t* dismiss them.
 
-### <span style={{color:"red"}}>Configuring VS Code for Python<span>
+### Configuring VS Code for Python
 
 If you haven’t created a `project.py` file in the `pyworkshop` directory, now is the time to do so. You can make a new file (Ctrl+N or ⌘P) and then save it (Ctrl+S or ⌘S).
 
