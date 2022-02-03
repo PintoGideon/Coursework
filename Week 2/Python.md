@@ -191,7 +191,7 @@ If you already had your Python REPL open, you’ll need to select a terminal wit
 ### Running The File
 Once you’ve opened your hello.py file and selected your new terminal window, open the VS Code command palette.
 
-***Note** Open the command palette with Ctrl+Shift+P on Windows and Linux, and ⌘⇧P (command + shift + P) on Mac OS.
+***Note*** Open the command palette with Ctrl+Shift+P on Windows and Linux, and ⌘⇧P (command + shift + P) on Mac OS.
 Select Python: Run Python File in Terminal
 
 
