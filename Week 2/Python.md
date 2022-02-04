@@ -156,7 +156,7 @@ In the REPL, we can see the value of any variable just by entering it into the p
 You can copy and paste code into the REPL, even multiple lines of code at once. Copy the three lines below and paste them into your REPL. What’s the result?
 
 
-***Gideon, why have we wasted time setting up so many different environments? Well, a lot of people waste too much time in the setup and setting the right environment. Why not get the boring part out of the way, and just focus on the learning. There are a lot of internet articles out there and I want to funnel all the content to a battle test environment which is more closed to a real-world scenario"***
+***Gideon, why have we wasted time setting up so many different environments? Well, a lot of people waste too much time in the setup and setting the right environment. Why not get the boring part out of the way, and just focus on the learning. There are a lot of internet articles out there and I want to funnel all the content to a battle tested environment which is more closed to a real-world scenario"***
 
 
 ### Running Code
