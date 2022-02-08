@@ -329,7 +329,7 @@ You can use string concatenation to join two related strings, such as joining a 
 >>> last_name = "Pinto"
 >>> full_name = first_name + " " + last_name
 >>> full_name
-'Arthur Dent'
+'Gideon Pinto'
 ```
 
 Here, you use string concatenation twice on the same line. First, you concatenate first_name with `" "` to ensure a space appears after the ﬁrst name in the ﬁnal string. This produces the string "Gideon ", which you then concatenate with last_name to produce the full name "Gideon Pinto".
