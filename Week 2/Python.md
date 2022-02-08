@@ -217,12 +217,12 @@ Helpful information about the program can be encapsulated in a
 comment. The comment is seperated by triple quotes
 """
 
-The first thing we're doing is importing the popular requests
-library. 
+The first thing we're doing is importing the popular requests library. 
 
 ```python
 import requests
 ```
+
 Next, we define the URL for the GitHub search API, which we found in the documentation for that endpoint in a variable called GITHUB_API_URL. This variable is named in all upper case because it’s a constant. A value that we don’t expect to change over the course of our program.
 
 
@@ -237,7 +237,7 @@ First, the code in the main method will run. This code defines three different l
 ```python
 languages = ["python", "javascript", "ruby"]
 ```
-Then calls the repos_with_most_stars method with that language list, and gets back a list of results
+Then calls the `repos_with_most_stars` method with that language list, and gets back a list of results
 
 
 ```python
