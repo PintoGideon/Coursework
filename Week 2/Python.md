@@ -389,6 +389,8 @@ The last character in a string has index -1, which for "fig pie" is the letter e
 
 Just like with positive indices, Python raises an IndexError if you try to access a negative index less than the index of the ﬁrst character in the string:
 
+![negative](https://user-images.githubusercontent.com/15992276/152918294-29a82d42-f71b-42bd-987d-ff1daa06b1c8.png)
+
 ```python
 >>> flavor[-10]
 Traceback (most recent call last):
@@ -469,3 +471,100 @@ Similarly, if you omit the second index in the slice, then Python assumes you wa
 ' pie'
 ```
 For "fig pie", the slice [3:] is equivalent to the slice [3:7]. Since the character at index 3 is a space, flavor[3:9] returns the substring that starts with the space and ends with the last letter: " pie".
+
+If you omit both the ﬁrst and second numbers in a slice, you get a
+string that starts with the character at index 0 and ends with the last character. In other words, omitting both numbers in a slice returns the entire string:
+
+```python
+>>> flavor[:]
+'fig pie
+```
+
+It’s important to note that, unlike with string indexing, Python won’t raise an IndexError when you try to slice between boundaries that fall outside the beginning or ending boundaries of a string:
+
+```python
+>>> flavor[:14]
+'fig pie'
+>>> flavor[13:15]
+''
+```
+
+
+In this example, the ﬁrst line gets the slice from the beginning of the string up to but not including the fourteenth character. The string assigned to flavor has a length of nine, so you might expect Python to throw an error. Instead, it ignores any nonexistent indices and returns the entire string "fig pie".
+
+The third line shows what happens when you try to get a slice in which the entire range is out of bounds. flavor[13:15] attempts to get the thirteenth and fourteenth characters, which don’t exist. Instead of raising an error, Python returns the *empty string "".*
+
+***Note***:
+
+The empty string is called empty because it doesn’t contain any
+characters. You can create it by writing two quotation marks
+with nothing between them:
+```python
+empty_string = ""
+
+```
+A string with anything in it—even a space—is not empty. All of
+the following strings are non-empty:
+
+```python
+non_empty_string1 = " "
+non_empty_string2 = "  "
+non_empty_string3 = "      "
+```
+
+Even though these strings don’t contain any visible characters,
+they are non-empty because they do contain spaces.
+
+You can use negative numbers in slices. The rules for slices with negative numbers are exactly the same as the rules for slices with positive numbers. It helps to visualize the string as slots with the boundaries labeled with negative numbers:
+
+![negative_slice](https://user-images.githubusercontent.com/15992276/152918562-295a507a-1dc8-4c11-b90e-6d6abd1b85f6.png)
+
+
+Just like before, the slice [x:y] returns the substring starting at index x and going up to but not including y. For instance, the slice [-7:-4] returns the ﬁrst three letters of the string "fig pie":
+
+```python
+>>> flavor[-7:-4]
+'fig'
+```
+Notice, however, that the rightmost boundary of the string does not have a negative index. The logical choice for that boundary would seem to be the number 0, but that doesn’t work.
+
+Instead of returning the entire string, [-7:0] returns the empty string:
+
+```python
+>>> flavor[-7:0]
+''
+```
+
+This happens because the second number in a slice must correspond
+to a boundary that is to the right of the boundary corresponding to the ﬁrst number, but both -7 and 0 correspond to the leftmost boundary in the ﬁgure.
+
+Slices with negative indices are useful, though, for getting the last few characters in a string. For example, flavor[-3:] is "pie".
+
+### Strings are Immutable
+
+Strings are immutable, which means that you can’t change
+them once you’ve created them. For instance, see what happens when
+you try to assign a new letter to one particular character of a string:
+
+
+```python
+>>> word = "goal"
+>>> word[0] = "f"
+Traceback (most recent call last):
+File "<pyshell#16>", line 1, in <module>
+word[0] = "f"
+TypeError: 'str' object does not support item assignment
+```
+
+Python throws a TypeError and tells you that str objects don’t support item assignment.
+If you want to alter a string, then you must create an entirely new string. To change the string "goal" to the string "foal", you can use a string slice to concatenate the letter "f" with everything but the ﬁrst letter of the word "goal":
+
+```python
+>>> word = "goal"
+>>> word = "f" + word[1:]
+>>> word
+'foal'
+
+```
+First, you assign the string "goal" to the variable word. Then you concatenate the slice word[1:], which is the string "oal", with the letter "f" to get the string "foal". If you’re getting a diﬀerent result here, then make sure you’re including the colon character (:) as part of the string slice.
+
