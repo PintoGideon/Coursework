@@ -424,7 +424,7 @@ last_character = user_input[-1]
 
 ### String Slicing
 
-string "fig pie". You could access each character by index and con-catenate them like this:
+Suppose you need a string containing just the ﬁrst three letters of the string "fig pie". You could access each character by index and con-catenate them like this:
 
 ```python
 >>> first_three_letters = flavor[0] + flavor[1] + flavor[2]
