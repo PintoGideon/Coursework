@@ -244,25 +244,24 @@ Then calls the `repos_with_most_stars` method with that language list, and gets 
 results = repos_with_most_stars(languages)
 
 ```
-Let’s jump to the repos_with_most_stars function. We know it’s a function because of the def keyword, followed by a function name, parameters – both required and optional in parenthesis, and finally, a colon :. It accepts a list of languages to sort by, as well as some optional parameters for how we want to sort the list. By default, we sort it by the number of stars the repo has, in descending order.
+Let’s jump to the `repos_with_most_stars` function. We know it’s a function because of the `def` keyword, followed by a function name, parameters – both required and optional in parenthesis, and finally, a colon :. It accepts a list of languages to sort by, as well as some optional parameters for how we want to sort the list. By default, we sort it by the number of stars the repo has, in descending order.
 
 
 ```python
 def repos_with_most_stars(languages, sort="stars", order="desc"):
 
 ```
-Next, we need to create a query string that this particular API understands. We do that in the create_query function. This function takes the languages as a required parameter, and the minimum number of stars we’d like to query for as an optional parameter.
+Next, we need to create a query string that this particular API understands. We do that in the `create_query` function. This function takes the languages as a required parameter, and the minimum number of stars we’d like to query for as an optional parameter.
 
 ```python
 def create_query(languages, min_stars=50000):
 
 ```
 
-In this function, we create a query string that looks like this `stars:>50000 language:python language:javascript language:ruby”. These parameters of this query string are defined by the expectations of the API that we’re working with. We return this value.
+In this function, we create a query string that looks like this `stars:>50000 language:python language:javascript language:ruby`. These parameters of this query string are defined by the expectations of the API that we’re working with. We return this value.
 
 Since the query is a little confusing, there’s a comment in the code that explains what it does. The comment starts with #.
-
-Back in the repos_with_most_stars function, we use our query string as part of the parameters that we’ll be passing in to the API, along with the URL that we’ll be using.
+Back in the `repos_with_most_stars` function, we use our query string as part of the parameters that we’ll be passing in to the API, along with the URL that we’ll be using.
 
 We declare them in a dictionary called params, like this:
 
@@ -273,7 +272,7 @@ params = {"q": query, "sort": sort, "order": order}
 ```
 
 These params map to part of a URL that will look like this: `q=stars:>50000+language:python+language:javascript+language:ruby+&sort=stars&order=desc`
-Next, we use these parameters as well as the URL defined in GITHUB_API_URL to call the API using the requests library.
+Next, we use these parameters as well as the URL defined in `GITHUB_API_URL` to call the API using the requests library.
 
 ```python
     response = requests.get("https://api.github.com/search/repositories", params=params)
@@ -281,7 +280,6 @@ Next, we use these parameters as well as the URL defined in GITHUB_API_URL to ca
 We’re requesting the data at this URL: `https://api.github.com/search/repositories?q=stars:>50000+language:python+language:javascript+language:ruby+&sort=stars&order=desc`
 
 We’re using the requests library because it allows us to quickly and easily work with the data returned from an API.
-
 Next, we quickly check the HTTP status code to make sure that it was 200. If it wasn’t, that means that something went wrong with our request and we’ll want to throw an exception to quit our program.
 
 ```python
