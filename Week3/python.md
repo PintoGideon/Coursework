@@ -496,3 +496,72 @@ None
 
 When you call `print()`, the text that gets displayed is not the return
 value. It’s a side eﬀect of `print()`.
+
+### Write your own functions
+
+As you write more complex programs, you may ﬁnd that you need to
+repeatedly use the same few lines of code. For instance, you might
+need to calculate the same formula with diﬀerent values several times
+in your code.
+You might be tempted to copy and paste similar code to other parts of
+your program and modify it as needed, but this is usually a bad idea!
+If you ﬁnd a mistake in some code that’s been copied and pasted all
+over the place, you’ll have to apply the ﬁx everywhere the code was
+copied. That’s a lot of work!
+
+### The Anatomy of a function
+
+1. The `function signature` deﬁnes the name of the function and any inputs it expects.
+
+2. The `function body` contains the code that runs every time the
+function is used.
+
+
+Let’s start by writing a function that takes two numbers as input and
+returns their product. Here’s what this function might look like, with
+the signature, body, and return statement identiﬁed with comments:
+
+```python
+def multiply(x,y): # function signature
+    # Function body
+    product=x*y
+    return product
+```
+
+***Important***:
+
+To deﬁne a function in IDLE’s interactive window, you need to
+press `Enter` twice after the line containing return in order for
+Python to register the function:
+
+```python
+>>> def multiply(x, y):
+...product = x * y
+...return product
+... # <--- Hit Enter a second time here
+>>>
+
+```
+
+### The Function Signature
+
+The ﬁrst line of code in a function is called the *function signature*.
+It always starts with the `def` keyword, which is short for “deﬁne.”
+
+```python
+def multiply(x,y):
+```
+The function signature has four parts:
+1. The def keyword
+2. The function name, multiply
+3. The parameter list, (x,y)
+4. A colon (:) at the end of the line
+
+When Python reads a line beginning with the def keyword, it creates
+a new function. The function is assigned to a variable with the same
+name as the function name.
+
+The *parameter list* is a list of parameter names surrounded by open-
+ing and closing parentheses. It deﬁnes the function’s expected inputs.
+(x, y) is the parameter list for the multiply function. It creates two
+parameters, x and y.
