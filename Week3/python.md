@@ -198,7 +198,56 @@ Hello there!
 ```
 
 
+To make input() a bit more user-friendly, you can give it a prompt to display to the user. The prompt is just a string that you put between the parentheses of input(). It can be anything you want: a word, a
+symbol, a phrase—anything that is a valid Python string.
+
+```python
+prompt = "Hey, what's up? "
+user_input = input(prompt)
+print("You said: " + user_input)
+
+```
+The single space at the end of the string "Hey, what's up? " makes sure
+that when the user starts to type, the text is separated from the prompt
+with a space. When the user types a response and presses Enter , their
+response is assigned to the user_input variable.
 
 
+```md
 
+Hey, what's up? The Lord is my rock and my fortress and my deliverer.
+
+You said: The Lord is my rock and my fortress and my deliverer,
+
+```
+#### Type Conversions
+
+The `TypeError` in the python highlight a common problem when applying user input to an operation that requires a number and not a string: type mismatches.
+
+
+```python
+num = input("Enter a number to be doubled: ")
+doubled_num = num * 2
+print(doubled_num)
+
+```
+If you entered the number 2 at the prompt, then you would expect the
+output to be 4. But in this case, you would get 22. Remember, `input()`
+always returns a string, so if you input 2, then num is assigned the string "2", not the integer 2. Therefore, the expression `num * 2` returns the string "2" concatenated with itself, which is "22".
+
+
+To perform arithmetic on numbers contained in a string, you must
+ﬁrst convert them from a string type to a number type. There are two
+functions that you can use to do this: `int()` and `float()`.
+`int()` stands for integer and converts objects into whole numbers,
+whereas `float()` stands for *floating-point number* and converts objects into numbers with decimal points.
+
+```python
+>>> int("12")
+12
+
+>>> float("12")
+12.0
+
+```
 
