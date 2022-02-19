@@ -362,5 +362,137 @@ You’ve already seen how to use several functions, including `print()`,
 come built into the Python language itself. You can also create user-
 defined functions that perform speciﬁc tasks.
 
+### Functions are Values
+
+One of the most important properties of a function in Python is that
+functions are values and can be assigned to a variable.
+
+In IDLE’s interactive window, inspect the name len by typing the fol-
+lowing in at the prompt:
 
 
+```python
+>>> len
+<built in function len>
+
+```
+Python tells you that `len` is a built-in function. Just like integer values have a type called `int`, and strings have a type `str`, function values also have a type:
+
+```python
+>>> type(len)
+<class 'builtin_function_or_method'>
+
+```
+The name `len`, though, can be assigned to a diﬀerent value, if you like:
+
+```python
+>>> len = "I'm not the len you're looking for."
+>>> len
+"I'm not the len you're looking for."
+
+```
+
+Now `len` has a string value, and you can verify that the type is str with
+`type()`:
+
+```python
+>>> type(len)
+<class 'str'>
+```
+
+Even though you can change the value of the name len, it’s usually a
+bad idea to do so. Changing the value of len can make your code con-
+fusing because it’s easy to mistake the new len for the built-in function.
+The same goes for any built-in function.
+
+### How Python executes Functions
+
+The ﬁrst thing to notice is that you can’t execute a function by just
+typing its name. You must `call` the function to tell Python to actually
+execute it.
+```python
+>>> # Typing just the name doesn't execute the function.
+>>> # IDLE inspects the variable as usual.
+>>> len
+<built-in function len>
+
+>>> # Use parentheses to call the function.
+>>> len()
+Traceback (most recent call last):
+File "<pyshell#3>", line 1, in <module>
+len()
+TypeError: len() takes exactly one argument (0 given)
+
+
+```
+
+In this example, Python raises a TypeError when `len()` is called because `len()` expects an argument.
+
+An argument is a value that gets passed to the function as input.
+Some functions can be called with no arguments, and some can take
+as many arguments as you like. len() requires exactly one argument.
+
+When a function is done executing, it returns a value as output. The
+return value usually — but not always — depends on the values of any
+arguments passed to the function.
+
+1. The function is called, and any arguments are passed to the func-
+tion as input.
+
+2. The function executes, and some action is performed with the
+arguments.
+
+3. The function returns, and the original function call is replaced
+with the return value.
+
+
+```python
+num_letters = len("four")
+```
+
+First, `len()` is called with the argument "four". The length of the string is calculated, which is the number 4. Then `len()` returns the
+number 4 and replaces the function call with the value.
+"four"
+You can imagine that, after the function executes, the line of code
+looks like this:
+
+```python
+>>> num_letters = 4
+```
+
+Then Python assigns the value 4 to `num_letters` and continues executing any remaining lines of code in the program.
+
+### Side Effects
+
+You’ve learned how to call a function and that they return a value when
+they are done executing. Sometimes, though, functions do more than
+just return a value.
+
+When a function changes or aﬀects something external to the func-
+tion itself, it is said to have a side e ect. You have already seen one
+function with a side eﬀect: `print()`.
+
+When you call `print()` with a string argument, the string is displayed
+in the Python shell as text. But print() doesn’t return any text as a
+value.
+
+To see what `print()` returns, you can assign the return value of `print()`
+to a variable:
+
+```python
+>>> return_value = print("What do I return?")
+What do I return?
+>>> return_value
+>>>
+```
+When you assign `print("What do I return?")` to `return_value`, the string "What do I return?" is displayed. However, when you inspect the value of return_value, nothing is shown.
+
+```python
+type(return_value)
+<class 'NoneType'>
+>>> print(return_value)
+None
+```
+
+When you call `print()`, the text that gets displayed is not the return
+value. It’s a side eﬀect of `print()`.
