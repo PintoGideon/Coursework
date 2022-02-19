@@ -250,4 +250,105 @@ whereas `float()` stands for *floating-point number* and converts objects into n
 12.0
 
 ```
+Notice how float() adds a decimal point to the number. Floating-point numbers always have at least one decimal place of precision. For
+this reason, you can’t change a string that looks like a floating-point
+number into an integer because you would lose everything after the
+decimal point.
+
+```python
+>>> int("12.0")
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '12.0'
+```
+
+### Putting Type Conversions together
+
+
+```python
+
+num= input("Enter a number to be doubled: ")
+doubled_num=num*2
+print(doubled_num)
+```
+The issue is on the line
+and 2 is an integer.
+
+You can ﬁx the problem by passing num to either int() or float(). Since
+the prompts asks the user to input a number, and not speciﬁcally an integer, let’s convert num to a floating-point number:
+
+```python
+num = input("Enter a number to be doubled: ")
+doubled_num = float(num) * 2
+print(doubled_num)
+```
+
+### Converting numbers to strings
+
+```python
+
+>>> num_pancakes = 10
+>>> "I am going to eat " + num_pancakes + " pancakes."
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+
+```
+Since num_pancakes is a number, Python can’t concatenate it with the
+string "I'm going to eat". To build the string, you need to convert
+num_pancakes to a string using str():
+
+```python
+>>> num_pancakes = 10
+>>> "I am going to eat " + str(num_pancakes) + " pancakes."
+'I am going to eat 10 pancakes.'
+```
+
+str() can even handle arithmetic expressions:
+
+```python
+>>> total_pancakes = 10
+>>> pancakes_eaten = 5
+>>> "Only " + str(total_pancakes - pancakes_eaten) + " pancakes left."
+'Only 5 pancakes left.'
+```
+
+### Streamline your print statements
+
+Suppose you have a string, name = "Gideon", and two integers, heads = 2
+and arms = 3. You want to display them in the string "Gideon has
+2 heads and 3 arms". This is called *string interpolation*, which is
+just a fancy way of saying that you want to insert some variables into
+speciﬁc locations in a string.
+
+```python
+>>> name + " has " + str(heads) + " heads and " + str(arms) + " arms"
+
+'Gideon has 2 heads and 3 arms'
+
+```
+This code isn’t the prettiest, and keeping track of what goes inside or
+outside the quotes can be tough. Fortunately, there’s another way of
+interpolating strings: formatted string literals, more commonly
+known as f-strings. The easiest way to understand f-strings is to see them in action.
+
+```python
+f"{name} has {heads} heads and {arms} arms"
+
+'Gideon has 2 heads and 3 arms'
+
+```
+
+1. The string literal starts with the letter f before the opening quota-
+tion mark.
+
+2. Variable names surrounded by curly braces ({}) are replaced by
+their corresponding values without using str().
+
+```python
+>>> n = 3
+>>> m = 4
+>>> f"{n} times {m} is {n*m}"
+'3 times 4 is 12'
+```
 
