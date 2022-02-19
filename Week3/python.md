@@ -352,3 +352,15 @@ their corresponding values without using str().
 '3 times 4 is 12'
 ```
 
+### Functions and Loops
+
+Functions are the building blocks of almost every Python program.
+They’re where the real action takes place!
+
+You’ve already seen how to use several functions, including `print()`,
+`len()`, and `round()`. These are all built-in functions because they
+come built into the Python language itself. You can also create user-
+defined functions that perform speciﬁc tasks.
+
+
+
