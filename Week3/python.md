@@ -930,3 +930,159 @@ for num_people in range(2,6):
 
 
 ```
+
+The `for` loop loops over the number 2,3,4 and 5 and prints the number of people and the amount each person should pay.  The format specifier ,.2f
+is used to format the amount as fixed-point number rounded to two decimal places and commas every three digits.
+Running the program with the input 10 produces the following output:
+
+```
+Enter an amount: 10
+2 people: $5.00 each
+3 people: $3.33 each
+4 people: $2.50 each
+5 people: $2.00 each
+```
+
+
+
+### Sample Program
+
+Write a program that tracks the growing amount of an
+investment over time.
+
+An initial deposit, called the principal amount is made. Each year, the amount increases by a fixed percentage
+called the annual rate of return.
+
+A principal amount of $100 with an annual rate of return
+of 5% increases the first year by $5. The second year,
+the increase is 5% of the new amount $105 which is $5.25.
+
+```python
+
+def invest(amout, rate, years)
+
+```
+
+Write a function called `invest` with three parameters: the principal amount, the annual rate of return and the number of years to calculate.
+
+The function then prints out the amount of the investment, rounded to 2 decimal places, at the end of each year for the speciﬁed number of years.
+
+For example, calling invest(100,.05, 4) should print the following:
+```
+year 1: $105.00
+year 2: $110.25
+year 3: $115.76
+year 4: $121.55
+```
+
+### Solution 
+
+```python
+# Calculate interest to track the growth of an investment
+
+def invest(amount, rate, years):
+    """ Display year on year growth of an initial investment """
+
+    for year in range(1, years + 1):
+        amount = amount * (1 + rate)
+        print(f"year {year}: ${amount:,2f}")
+
+
+amount=float(input("Enter a principal amount:"))
+rate = float(inout("Enter an annual rate of return:"))
+years= int(inout("Enter a number of years: "))
+
+invest(amount,rate,years)
+
+```
+
+### Understand the scope in Python
+
+Scope can be one of the more diﬃcult concepts to understand in programming
+
+
+When you assign a value to a variable, you are giving that value a name. Names are unique. For example, you can’t assign the same name to two diﬀerent numbers.
+
+```python
+x=2
+x
+2
+
+x=3
+x
+3
+```
+
+When you assign 3 to x, you can no longer recall the value 2 with the name x.
+This behavior makes sense. After all, if the variable x has the values 2 and 3 simultaneously, how do you evaluate x + 2? Should it be 4 or 5?
+
+Open a new editor window in IDLE and type out the following program:
+
+```python
+x = "Hello World"
+
+def func():
+    x = 2
+    print(f"Inside 'func', x has the value {x}")
+
+func()
+print(f"Outside 'func', x has the value {x}")
+```
+In this example, the variable x is assigned two diﬀerent values. x is assigned "Hello, World" at the beginning, and is assigned 2 inside of func().
+The code’s output, which you might ﬁnd surprising, looks like this: 
+```
+Inside 'func', x has the value 2
+Outside 'func', x has the value Hello World.
+```
+
+
+How does x still have the value "Hello changes the value of x to 2? World" after calling func(), which
+The answer is that the function func() has a diﬀerent scope than the code that exists outside of the function. That is, you can name an object inside func() the same name as something outside func() and Python can keep the two separated.
+
+
+The function body has what is known as a ***local scope***, with its own set of names available to it. Code outside of the function body is in the ***global scope***.
+
+
+You can think of a scope as a set of names mapped to objects. When you use a particular name in your code, such as a variable or a function name, Python checks the current scope to determine whether or not that name exists.
+
+### Scope resolution
+
+```python
+x = 5
+   def outer_func():
+       y = 3
+       def inner_func():
+           z = x + y
+           return z
+   return inner_func()
+
+```
+
+he variable z is in the local scope of inner_func(). When Python executes the line z = x + y, it looks for the variables x and y in the local scope. However, neither of them exist there, so it moves up to the
+scope of the `outer_func()` function.
+
+The scope for `outer_func()` is an enclosing scope of `inner_func()`. It is not quite the global scope, and is not the local scope for `inner_func()`.
+It lies in between those two.
+
+The variable y is deﬁned in the scope for outer_func() and is assigned the value 3. However, x does not exist in this scope, so Python moves up once again to the global scope. There it ﬁnds the name x, which
+has the value 5. Now that the names x and y are resolved, Python can execute the line z = x + y, which assigns to z the value of 8.
+
+### The LEGB rule
+
+A useful way to remember how Python resolves scope is with the LEGB rule. This rule is an acronym for Local, Enclosing, Global,Built-in.
+
+Python resolves scope in the order in which each scope appears in the list LEGB. Here is a quick overview to help you remember how all of this works.
+
+
+1. Local (L): The local, or current, scope. This could be the body of a function or the top-level scope of a code ﬁle. It always represents the scope that the Python interpreter is currently working in.
+
+2. Enclosing (E): The enclosing scope. This is the scope one level up from the local scope. If the local scope is an inner function, the enclosing scope is the scope of the outer function. If the scope is a top-level function, the enclosing scope is the same as the global scope.
+
+3. Global (G): The global scope, which is the top-most scope in a program. It contains all of the names deﬁned in the code that are not contained in a function body.
+
+4. Built-in (B): The built-in scope contains all of the names, such as keywords, that are built-in to Python. Functions such as `round()` and `abs()` are in the built-in scope. Anything that you can use with-
+out ﬁrst deﬁning yourself is contained in the built-in scope.
+
+ Scope can be confusing, and it takes some practice for the concept to feel natural. Don’t worry if it doesn’t make sense at ﬁrst. Just keep
+practicing and use the LEGB rule to help you ﬁgure things out.
+
