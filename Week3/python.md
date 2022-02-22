@@ -565,3 +565,368 @@ The *parameter list* is a list of parameter names surrounded by open-
 ing and closing parentheses. It deﬁnes the function’s expected inputs.
 (x, y) is the parameter list for the multiply function. It creates two
 parameters, x and y.
+
+A parameter is sort of like a variable, except that it has no value.
+It is a placeholder for actual values that are provided whenever the
+function is called with one or more arguments.
+
+Code in the function body can use parameters as if they are variables
+with real values. For example, the function body may contain a line
+of code with the expression x * y.
+
+Since x and y have no value, x * y has no value. Python saves the
+expression as a template and ﬁlls in the missing values when the function is executed.
+
+### The Function Body
+
+The function body is the code that gets run whenever the function
+is used in your program. Here’s the function body for the multiply
+function:
+
+```python
+def multiply(x, y):
+# Function body
+product = x * y
+return product
+```
+
+`multiply` is a pretty simple function. It’s body has only two lines of code!
+
+
+The ﬁrst line creates a variable called product and assigns to it the value x * y. Since x and y have no values yet, this line is really a template for the value product gets assigned when the function is executed.
+
+The second line of code is called a `return` statement. It starts with
+the `return` keyword and is followed by the variable product. 
+
+When Python reaches the return statement, it stops running the function and returns the value of product.
+
+Notice that both lines of code in the function body are indented. This
+is vitally important! Every line that is indented below the function
+signature is understood to be part of the function body.
+
+For instance, the `print()` function in the following example is not a
+part of the function body because it is not indented:
+```python
+def multiply(x, y):
+    product = x * y
+    return product
+
+print("Where am I?")
+# Not in the function body.
+
+```
+
+If print() is indented, then it becomes a part of the function body even if there is a blank line between print() and the previous line:
+
+```python
+def multiply(x, y):
+   product = x * y
+   return product
+   
+   print("Where am I?")
+# In the function body.
+```
+
+There is one rule that you must follow when indenting code in a function’s body. Every line must be indented by the same number of
+spaces.
+
+Try saving the following code to a ﬁle called multiply.py and running
+it from IDLE:
+
+```python
+def multiply(x, y):
+    product = x * y
+      return product
+# Indented with one extra space.
+```
+
+
+IDLE won’t run the code! A dialog box appears with the error “unexpected indent.” Python wasn’t expecting the return statement to be indented diﬀerently than the line before it.
+
+```python
+def multiply(x, y):
+    product = x * y
+  return product
+# Indented less than previous line.
+```
+
+***Important***
+
+Although Python has no rules for the number of spaces used to
+indent code in a function body, PEP 8 recommends indenting
+with four spaces.
+
+```python
+def multiply(x, y):
+    product = x * y
+    return product
+    print("You can't see me!")
+
+```
+
+This version of `multiply()` never prints the string "You Calling a User-Defined Function can't see me!".
+
+### Calling a user-defined function
+
+You call a user-deﬁned function just like any other function. Type the
+function name followed by a list of arguments in between parentheses.
+
+
+For instance, to call `multiply()` with the argument 2 and 4, just type:
+multiply(2, 4)
+
+Unlike built-in functions, user-deﬁned functions are not available until they have been deﬁned with the def keyword. You must deﬁne the function before you call it.
+
+```python
+num = multiply(2, 4)
+print(num)
+
+
+def multiply(x, y):
+    product = x * y
+    return product
+
+```
+
+Save the ﬁle and press F5 . Since the line deﬁning multiply() comes
+after the ﬁrst time the function is called, Python doesn’t recognize the
+name multiply and raises a NameError:
+
+```python
+Traceback (most recent call last):
+File "C:Usersdaveamultiply.py", line 1, in <module>
+
+
+num = multiply(2, 4)
+NameError: name 'multiply' is not defined
+
+```
+
+To ﬁx the error, move the function deﬁnition to the top of the ﬁle:
+
+```python
+def multiply(x, y):
+    product = x * y
+    return product
+
+num = multiply(2, 4)
+print(num)
+
+```
+
+### Caveats - Functions With No Return Statement
+
+All functions in Python return a value, even if that value is None. How-
+ever, not all functions need a return statement.
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+```
+greet() has no `return` statement, but works just ﬁne:
+
+```python
+>>> greet("Dave")
+Hello, Dave!
+```
+```python
+>>> return_value = greet("Dave")
+Hello, Dave!
+>>> print(return_value)
+None
+```
+
+The string "Hello Dave!" is printed even when the result of is assigned to a variable. If you weren’t expecting
+to see "Hello, Dave!" printed, then you just experienced one of the
+issues with side eﬀects. The can be unexpected!
+
+
+### Document your functions
+Docstrings are used to document what a function does and what kinds
+of parameters it expects:
+
+```python
+def multiply(x, y):
+"""Return the product of two numbers x and y."""
+    product = x * y
+    return product
+
+```
+
+Re-write your `multiply()` function with the docstring. Now you can use `help()` in the interactive window to see the docstring:
+
+
+```python
+help(multiply)
+Help on function multiply in module __main__:
+
+multiply(x, y)
+Return the product of two numbers x and y.
+
+```
+
+
+### Looping
+A loop is a block of code that repeatedly executes either a speciﬁed
+number of times or until some condition is met. Python has two kinds
+of loops: while loops and for loops. In this section, you’ll learn how
+to use both.
+
+### The while loop
+
+
+`while` loop repeat a section of code while some condition is true.
+
+
+There are two parts to every while loop:
+
+1. The `while` statement starts with the while keyword, followed by a `test condition`, and ends with a colon (:).
+
+
+2. The *loop body* contains the code that gets repeated at each step of the loop. Each line is indented four spaces.
+
+When Python executed a `while` loop, it evaluates the test condition and
+determines if it is true or false. If the test condition is true, then the
+code in the loop body is executed and Python returns to check the test
+condition again. Otherwise, the code in the body is skipped and the
+rest of the program is executed.
+
+
+```python
+>>> n = 1
+>>> while n < 5:
+...   print(n)
+...   n = n + 1
+...
+1
+2
+3
+4
+
+```
+
+First, the integer 1 is assigned to the variable n. Then a while loop is
+created with the test condition n < 5, which checks whether or not the
+value of n is less than 5.
+
+
+If n is less than 5, the body of the loop is executed. There are two lines
+of code in the loop body. In the ﬁrst line, the value of n is printed on
+the screen, and then n is incremented by 1 in the second line.
+
+If you aren’t careful, you can create an in nite loop. This happens when the test condition is always true. An inﬁnite loop never terminates. The loop body keeps repeating forever.
+
+
+```python
+>>> n = 1
+>>> while n < 5:
+...     print(n)
+...
+
+```
+
+One use of a while loop is to check whether or not user input meets some condition and, if not, repeatedly ask the user for new input until valid input is received.
+
+The following program continuously asks a user for a
+positive number until a positive number is entered:
+
+```python
+num = float(input("Enter a positive number"))
+
+
+while num <=0:
+    print("Thats not a positive number")
+    num = float(input("Enter a positive number"))
+
+```
+First, the user is prompted to enter a positive number. The test con-
+dition num <= 0 determines whether or not num is less than or equal to
+0.
+
+If num is positive, then the test condition fails. The body of the loop is skipped and the program ends.
+Otherwise, if num is 0 or negative, the body of the loop executes. The
+user is notiﬁed that their input was incorrect, and they are prompted
+again to enter a positive number.If num is positive, then the test condition fails. The body of the loop is skipped and the program ends.
+Otherwise, if num is 0 or negative, the body of the loop executes. The
+user is notiﬁed that their input was incorrect, and they are prompted
+again to enter a positive number.
+
+### The `for` loop
+
+A for loop executes a section of code once for each item in a collection
+of items. The number of times that the code is executed is determined
+by the number of items in the collection.
+
+1. The `for` statement begins with the `for` keyword, followed by a membership expression, and ends in a colon (:).
+
+2. The loop body contains the code to be executed at each step of the loop, and is indented four spaces.
+
+```python
+for letter in "Python":
+print(letter)
+
+```
+
+In this example, the for statement is for letter in "Python". The membership
+expression is letter in "Python".
+
+At each step of the loop, the variable `letter` is assigned to the next letter in the string "Python".
+
+
+***Important***
+
+People describe some code as being
+particularly “Pythonic.” The term Pythonic is generally used to describe code that is clear, concise, and uses Python’s built-in features to its advantage.
+
+In these terms, using a for loop to loop over a collection of items
+is more Pythonic than using a while loop.
+
+Sometimes it’s useful to loop over a range of numbers. Python has a
+handy built-in function `range()` that produces just that — a range of
+numbers!
+
+For example, `range(3)` returns the range of integers starting with 0 and
+up to, but not including, 3. That is, range(3) is the range of numbers 0,
+1, and 2.
+
+
+
+You can use range(n), where n is any positive number, to execute a loop
+exactly n times. For instance, the following for loop prints the string
+"Python" three times:
+
+```python
+for n in range(3):
+    print("Python")
+
+```
+
+You can also give a range a starting point. For example, range(1, 5)
+is the range of numbers 1, 2, 3, and 4. The ﬁrst argument is the start-
+ing number, and the second argument is the endpoint, which is not
+included in the range.
+
+
+Using the two-argument version of range(), the following for loop
+prints the square of every number starting with 10 and up to, but not
+including, 20:
+
+```python
+for n in range(10,20):
+    print(n*n)
+```
+
+Example:
+
+Ask the user to input an amount 
+and then display how to split that
+amount between 2,3,4, and 5 people.
+
+```python
+amount = float(input("Enter an amount:"))
+
+for num_people in range(2,6):
+    print(f"{num_people} people: ${amount/num_people:,.2f} each")
+
+
+```
