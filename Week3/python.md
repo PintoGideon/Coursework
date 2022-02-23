@@ -1083,6 +1083,184 @@ Python resolves scope in the order in which each scope appears in the list LEGB.
 4. Built-in (B): The built-in scope contains all of the names, such as keywords, that are built-in to Python. Functions such as `round()` and `abs()` are in the built-in scope. Anything that you can use with-
 out ﬁrst deﬁning yourself is contained in the built-in scope.
 
- Scope can be confusing, and it takes some practice for the concept to feel natural. Don’t worry if it doesn’t make sense at ﬁrst. Just keep
-practicing and use the LEGB rule to help you ﬁgure things out.
+Scope can be confusing, and it takes some practice for the concept to feel natural. Don’t worry if it doesn’tmake sense at ﬁrst. Just keep practicing and use the LEGB rule to help you ﬁgure things out.
+
+
+### Break the rules
+
+```python
+total = 0
+
+def add_to_total(n):
+    total = total + n
+    
+add_to_total(5)
+print(total)
+```
+
+Did you get an error?
+
+```
+Traceback (most recent call last):
+File "C:/Users/gideon/stuff/python/scope.py", line 6, in <module>
+add_to_total(5)
+File "C:/Users/gideeon/stuff/python/scope.py", line 4, in add_to_total
+total = total + n
+UnboundLocalError: local variable 'total' referenced before assignment
+```
+According to the LEGB rule, Python should have recog-
+nized that the name total doesn’t exist in the add_to_total() function’s local scope and moved up to the global scope to resolve the name, right?
+
+
+The problem here is that the code attempts to make an assignment to the variable total, which creates a new name in the local scope. Then, when Python executes the right-hand side of the assignment it ﬁnds the name total in the local scope with nothing assigned to it yet.
+
+These kinds of errors are tricky and are one of the reasons it is best to use unique variable and function names no matter what scope you
+are in.
+
+You can get around this issue with the `global` keyword:
+
+```python
+total = 0
+def add_to_total(n):
+        global total
+        total = total + n
+
+add_to_total(5)
+print(total)
+
+```
+
+This time, you get the expected output 5. Why’s that?
+The line global total tells Python to look in the global scope for the name total. That way, the line total = total + n does not create a new local variable.
+
+Although this “ﬁxes” the program, the use of the
+considered bad form in general.
+
+If you ﬁnd yourself using global to ﬁx problems like the one above, stop and think if there is a better way to write your code. Often, you’ll ﬁnd that there is!
+
+### Bug finding and Fixing code
+
+You can use the debugger in Visual Code for this.
+
+```python
+for i in range(1, 4):
+           j = i * 2
+           print(f"i is {i} and j is {j}")
+
+```
+
+Some terminolgies to familiarize with.
+
+### Breakpoints
+
+Often, you may know that the bug must be in a particular section of your code, but you may not know precisely where. Rather than clicking the Step button all day long, you can set a breakpoint that tells
+the debugger to run all code before the breakpoint continuously until the breakpoint is reached.
+Breakpoints tell the debugger when to pause code execution so that you can take a look at the current state of the program. They don’t actually break anything.
+
+
+Let's debug the following code.
+
+```python
+
+ def add_underscores(word):
+     new_word="_"
+     for i in range(len(word)):
+         new_word= word[i] + "_"
+     return new_word
+
+phrase='hello'
+print(add_underscores(phrase))
+
+```
+The expected output is _h_e_l_l_o_, but
+instead all you see is o_, the letter "o" followed by a single underscore.
+
+The ﬁrst step is to identify the section of code that likely contains the bug. You may not be able to identify exactly where the bug is at ﬁrst,
+but you can usually make a reasonable guess about which section of your code has an error.
+
+Look at the “main” section:
+
+```python
+phrase = "hello"
+print(add_underscores(phrase))
+```
+Everything about those two lines of code looks good. So, the problem must be in the function deﬁnition:
+
+```python
+def add_underscores(word):
+    new_word = "_"
+    for i in range(len(word)):
+        new_word = word[i] + "_"
+    return new_word
+```
+The ﬁrst line of code inside the function creates a variable new_word with the value "_". All good there, so we can conclude that the problem
+is somewhere in the body of the for loop.
+
+### Set a breakpoint
+
+Set a breakpoint at the start of the for loop so that you can trace out exactly what’s happening inside with the Debug window:
+
+Now open the Debug window and run the ﬁle. Execution still pauses on the very ﬁrst line it sees (which is deﬁning the function).
+
+At this point, the code is paused just before entering the for loop in the `add_underscores()` function. Notice that two local variables, `word`
+and `new_word` are displayed in the Locals panel. Currently, word has the value `"hello"` and new_word has the value `"_"`, as expected.
+
+Click the Step button once to enter the for loop. The Debug window changes and a new variable i with the value 0 is displayed in the “Lo-
+cals” panel:
+
+`i` is the counter used in the for loop, and you can use it to keep track of which iteration of the for loop you are currently looking at.
+
+Click Step one more time. If you look at the Locals panel, you’ll see that the variable new_word has taken on the value "h_":
+
+This isn’t right. Originally, new_word had the value `"_"` and on the second iteration of the for loop it should now have the value "_h_". If you
+click Step a few more times, you’ll see that new_word gets set to e_, then l_, and so on.
+
+The conclusion you can make at this point is that new_word is overwritten at each iteration of the for loop with the next character in the string
+"hello" and a trailing underscore. Since there is only one line of code inside the for loop, you know that the problem must be with the following code:
+
+```python
+new_word = word[i] + "_"
+```
+Look at that closely. This line tells Python to get the next character of word, tack an underscore to the end of it, and assign this new string to
+the variable new_word. This is exactly the behavior you've witness by stepping through the `for` loop.
+
+Open the editor window and change the line inside the for loop to:
+
+```python
+new_word = new_word + word[i] + "_"
+```
+
+### Alternative way to find a bug
+
+In situations like these, you can use print debugging to ﬁnd bugs in your code. Print debugging uses `print()` to display text in the console
+that indicates where the program is executing and what the state of the programs variables are at certain points in the code.
+
+```python
+  def add_underscores(word):
+      new_word="_"
+      for i in range(len(word)):
+          new_word=word[i]+"_"
+          print(f"i={i}: new word={new_word}")
+      return new_word
+
+  phrase='hello'
+  print(add_underscores(phrase))
+
+```
+When you run the ﬁle, the interactive window displays the following
+output:
+
+```python
+i = 0; new_word = h_
+i = 1; new_word = e_
+i = 2; new_word = l_
+i = 3; new_word = l_
+i = 4; new_word = o_
+o_
+```
+This shows you what the value of new_word is at each iteration of the for loop. The ﬁnal line containing just a single underscore is the result or running print(add_underscore(phrase)) at the 
+end of the program.
+
+Print debugging works, but it has several disadvantages over debugging with a debugger. You have to run your entire program each time
+you want to inspect the values of your variables. This can be an enormous waste of time compared to using breakpoints.
 
