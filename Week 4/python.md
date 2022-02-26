@@ -464,3 +464,187 @@ print(f"Probability B wins: {num_times_B_wins / num_trials}")
 
 
 ```
+
+
+### Tuples , Lists and Dictionaries
+
+So far, you have been working with fundamental data types like str, int, and float. Many real-world problems are easier to solve when
+simple data types are combined into more complex data structures.
+
+A data structure models a collection of data, such as a list of numbers, a row in a spreadsheet, or a record in a database. Modeling the data that your program interacts with using the right data structure is often the key to writing simple and eﬀective code.
+
+### Tuples
+
+Perhaps the simplest compound data structure is a sequence of items.
+
+A *sequence* is an ordered list of values. Each element in a sequence is assigned an integer, called an index, that determines the order in
+which the values appear. Just like strings, the index of the ﬁrst value in a sequence is 0.
+
+Some real-world examples of sequences include the values emitted by a sensor every second, the sequence of a student’s test scores, or the
+sequence of daily stock values for some company over a period of time.
+
+A *tuple* comes from mathematics, where it is used to describe a ﬁnite ordered sequence of values.
+
+Usually, mathematicians write tuples by listing each element, separated by a comma, inside a pair of parentheses. (1, 2, 3) is a tuple
+containing three integers.
+
+Tuples are ordered because their elements appear in an ordered fashion. The ﬁrst element of (1, 2, 3) is 1, the second element is 2, and the third is 3
+
+### How to create a tuple
+
+1. Tuple literals
+2. The `tuple()` built in
+
+Just like a string literal is a string that is explicitly created by surrounding some text with quotes, a tuple literal is a tuple that is written out explicitly as a comma-separated list of values surrounded by parentheses.
+
+```python
+my_first_tuple=(1,2,3)
+
+type(my_first_tuple)
+<class 'tuple'>
+
+```
+Unlike strings, which are sequences of characters, tuples may contain any type of value, including values of diﬀerent types. The tuple (1, 2.0, "three") is perfectly valid.
+
+
+```python
+empty_tuple=()
+
+```
+
+At ﬁrst glance, the empty tuple may seem like a strange and useless concept, but it is actually quite practical.
+
+For example, suppose you are asked to provide a tuple containing all the integers that are both even and odd. No such integer exists, but
+the empty tuple allows you to provide the requested tuple.
+
+```python
+>>> x = (1)
+>>> type(x)
+<class 'int'>
+
+```
+When you surround a value with parentheses, but don’t include any commas, Python interprets the value not as a tuple but as the type of value inside the parentheses. So, in this case, (1) is a just a weird way of writing the integer 1.
+To create the tuple containing the single value 1, you need to include a comma after the 1:
+
+```python
+>>> x = (1,)
+>>> type(x)
+<class 'tuple'>
+```
+
+
+You can also use the `tuple()` built-in to create a tuple from another sequence type, such as a string:
+
+```python
+>>> tuple("Python")
+('P', 'y', 't', 'h', 'o', 'n')
+```
+`tuple()` only accepts a single parameter, so you can’t just list the values you want in the tuple as individual arguments. If you do, Python raises a TypeError:
+
+```python
+>>> tuple(1, 2, 3)
+Traceback (most recent call last):
+File "<pyshell#0>", line 1, in <module>
+tuple(1, 2, 3)
+TypeError: tuple expected at most 1 arguments, got 3
+
+```
+You will also get a TypeError if the argument passed to tuple() can’t be interpreted as a list of values:
+
+```python
+>>> tuple(1)
+Traceback (most recent call last):
+File "<pyshell#1>", line 1, in <module>
+tuple(1)
+TypeError: 'int' object is not iterable
+```
+The word iterable in the error message indicates that a single integer can’t be iterated, which is to say that the integer data type doesn’t
+contain multiple values that can be accessed one-by-one.
+
+Tuples and strings have a lot in common. Both are sequence types with a ﬁnite length, support indexing and slicing, are immutable, and
+can be iterated over in a loop.
+The main diﬀerence between strings and tuples is that the elements of tuples can be any kind of value you like, whereas strings can only
+contain characters.
+
+### Tuples have a length
+
+Both strings and tuples have a length. The length of a string is the number of characters in it. The length of a tuple is the number of
+elements it contains.
+
+Just like strings, the length of a tuple:
+len() function can be used to determine the
+length of a tuple:
+
+```python
+>>> numbers = (1,2,3)
+>>> len(numbers)
+3
+
+```
+### Tuples support Indexing and Slicing
+
+
+```python
+name = 'Harin'
+name[1]
+'a'
+```
+
+Like strings, tuples are immutable. This means you can’t change the value of an element of a tuple once it has been created.
+If you do try to change the value at some index of a tuple, Python will
+raise a TypeError:
+
+```python
+>>> values[0] = 2
+Traceback (most recent call last):
+File "<pyshell#1>", line 1, in <module>
+values[0] = 2
+TypeError: 'tuple' object does not support item assignment
+```
+
+### Tuples are Iterable
+Just like strings, tuples are iterable, so you can loop over them:
+
+```python
+>>> vowels = ("a", "e", "i", "o", "u")
+>>> for vowel in vowels:
+...
+print(vowel.upper())
+...
+A
+E
+I
+O
+U
+```
+### Checking existence of values with `in`
+
+```python
+>>> vowels = ("a", "e", "i", "o", "u")
+>>> "o" in vowels
+True
+>>> "x" in vowels
+False
+```
+
+If the value to the left of in is contained in the tuple to the right of the result is True. Otherwise, the result is False.
+
+
+### Returning Multiple Values from a Function
+
+```python
+def adder_subtractor(num1, num2):
+    return (num1 + num2, num1 - num2)
+adder_subtractor(3, 2)
+(5, 1)
+```
+
+The function adder_subtractor() has two parameters, num1 and num2, and returns a tuple whose ﬁrst element is the sum of the two numbers, and whose second element is the diﬀerence.
+
+Strings and tuples are just two of Python’s built-in sequence types.
+
+Both are immutable and iterable and can be used with index and slicing notation.
+
+### Lists are mutable sequences
+
+
