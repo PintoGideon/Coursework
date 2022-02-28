@@ -639,7 +639,7 @@ adder_subtractor(3, 2)
 (5, 1)
 ```
 
-The function adder_subtractor() has two parameters, num1 and num2, and returns a tuple whose ﬁrst element is the sum of the two numbers, and whose second element is the diﬀerence.
+The function `adder_subtractor()` has two parameters, num1 and num2, and returns a tuple whose ﬁrst element is the sum of the two numbers, and whose second element is the diﬀerence.
 
 Strings and tuples are just two of Python’s built-in sequence types.
 
@@ -647,4 +647,150 @@ Both are immutable and iterable and can be used with index and slicing notation.
 
 ### Lists are mutable sequences
 
+
+The `list` data structure is another sequence type in Python. Just like strings and tuples, lists contain items that are indexed by integers,
+starting with 0.
+
+Unlike tuples, lists are mutable.
+
+### Creating Lists
+
+A list literal looks almost exactly like a tuple literal, except that it is surrounded with square brackets ([ and ]) instead of parentheses:
+
+```python
+>>> colors = ["red", "yellow", "green", "blue"]
+>>> type(colors)
+<class 'list'>
+
+```
+
+When you inspect a list, Python displays it as a list literal:
+
+```python
+>>> colors
+['red', 'yellow', 'green', 'blue']
+```
+Like tuples, lists values are not required to be of the same type. The list literal ["one", 2, 3.0] is perfectly valid.
+
+You can even create a list from a string:
+
+```python
+>>> list("Python")
+['P', 'y', 't', 'h', 'o', 'n']
+```
+Each letter in the string becomes an element of the list. There is more useful way to create a list from a string. You can create a list from a string of a comma-separated list of items using the string object’s `.split()` method:
+
+```python
+>>> groceries = "eggs, milk, cheese"
+>>> grocery_list = groceries.split(", ")
+>>> grocery_list
+['eggs', 'milk', 'cheese']
+
+
+```
+
+The string argument passed to `.split()` is called the separator. By changing the separator you can split strings into lists in numerous
+ways:
+ 
+```python
+>>> "a;b;c".split(";")
+['a', 'b', 'c']
+
+>>> # Split string on spaces
+>>> "The quick brown fox".split(" ")
+['The', 'quick', 'brown', 'fox']
+
+>>> # Split string on multiple characters
+>>> "abbaabba".split("ba")
+['ab', 'ab', '']
+```
+
+`.split()` always returns a string whose length is one more than the  number of separators contained in the string. The string "abbaabba" contains two instances of the separator "ba" so the list returned by `split()` has three elements. Since the third separator isn’t followed by any other characters, the third element of the list is set to the empty string.
+
+
+```python
+"abbaabba".split("c")
+['abbaabba']
+```
+
+### Basic List Operations for Algorithms
+
+```python
+>>> numbers = [1, 2, 3, 4]
+>>> numbers[1]
+2
+```
+
+You can create a new list from an existing once using slice notation:
+
+```python
+>>> numbers[1:3]
+[2, 3]
+```
+You can check for the existence of list elements using the in operator:
+
+```python
+>>> # Check existence of an element
+>>> "Bob" in numbers
+False
+```
+Because lists are iterable, you can iterate over them with a for loop.
+
+```python
+>>> # Print only the even numbers in the list
+>>> for number in numbers:
+...
+if number % 2 == 0:
+2409.2. Lists Are Mutable Sequences
+...
+print(number)
+...
+2
+4
+```
+### Changing Elements in a List
+
+The ability to swap values in a list for other values is called mutability. Lists are **mutable*. The elements of tuples may not be swapped for new values, so tuples are said to be immutable.
+
+```python
+colors = ["red", "yellow", "green", "blue"]
+colors[0]="burgundy"
+>>> colors
+['burgundy', 'yellow', 'green', 'blue']
+
+```
+
+You can change several values in a list at once with a slice assignment:
+
+```python
+>>> colors[1:3] = ["orange", "magenta"]
+>>> colors
+['burgundy', 'orange', 'magenta', 'blue']
+```
+
+colors[1:3] selects the slots with indices 1 and 2. The values in these slots are assigned to "orange" and "magenta", respectively.
+
+The list assigned to a slice does not need to have the same length as the slice. For instance, you can assign a list of three elements to a slice with two elements:
+
+```python
+>>> colors = ["red", "yellow", "green", "blue"]
+>>> colors[1:3] = ["orange", "magenta", "aqua"]
+>>> colors
+['red', 'orange', 'magenta', 'aqua', 'blue']
+```
+
+The values "orange" and "magenta" replace the original values "yellow"cand "green" in colors at the indices 1 and 2. Then a new slot is created atcindex 4 and "blue" is assigned to this index. Finally, "aqua" is assignedcto index 3.
+
+When the length of the list being assigned to the slice is less than the length of the slice, the overall length of the original list is reduced:
+
+```python
+>>> colors
+['red', 'orange', 'magenta', 'aqua', 'blue']
+>>> colors[1:4] = ["yellow", "green"]
+>>> colors
+['red', 'yellow', 'green', 'blue']
+```
+
+The values "yellow" and "green" replace the values "orange" and "magenta" in colors at the indices 1 and 2. Then the value at index 3 is
+replaced with the value "blue". Finally, the slot at index 4 is removed from colors entirely.
 
