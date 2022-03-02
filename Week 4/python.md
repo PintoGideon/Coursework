@@ -791,6 +791,114 @@ When the length of the list being assigned to the slice is less than the length 
 ['red', 'yellow', 'green', 'blue']
 ```
 
-The values "yellow" and "green" replace the values "orange" and "magenta" in colors at the indices 1 and 2. Then the value at index 3 is
-replaced with the value "blue". Finally, the slot at index 4 is removed from colors entirely.
+The values "yellow" and "green" replace the values "orange" and "magenta" in colors at the indices 1 and 2. Then the value at index 3 is replaced with the value "blue". Finally, the slot at index 4 is removed from colors entirely.
 
+### List Methods for Adding and Removing Elements
+
+Although you can add and remove elements with slice notation, list methods provide a more natural and readable way to mutate a list.
+
+***list.insert()***
+
+The `list.insert()` method is used to insert a single new value into a list. It takes two parameters, an index i and a value x, and inserts the value x at index i in the list.
+
+```python
+>>> colors = ["red", "yellow", "green", "blue"]
+>>> # Insert "orange" into the second position
+>>> colors.insert(1, "orange")
+>>> colors
+['red', 'orange', 'yellow', 'green', 'blue']
+```
+
+The ﬁrst observation applies to all list methods. To use them, you ﬁrst write the name of the list you want to manipulate, followed by a dot (.) and then the name of the list method.
+So, to use `insert()` on the colors list, you must write
+This works just like string and number methods do. colors.`insert()`.
+
+Next, notice that when the value "orange" is inserted at the index 1, the value "yellow" and all following values are shifted to the right. If the value for the index parameter of `.insert()` is larger than the greatest index in the list, the value is inserted at the end of the list:
+
+```python
+>>> colors.insert(10, "violet")
+>>> colors
+['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+```
+
+***list.pop()***
+
+The `list.pop()` method takes one parameter, an index i, and removes the value from the list at that index. The value that is removed is returned by the method:
+
+```python
+>>> color = colors.pop(3)
+>>> color
+'green'
+>>> colors
+['red', 'orange', 'yellow', 'blue', 'indigo', 'violet']
+
+```
+
+Unlike `.insert()`, Python raises an `IndexError` if you pass to `.pop()` an argument larger than the last index:
+
+
+***list.append()***
+The list.append() method is used to append an new element to the end of a list:
+
+
+```python
+>>> colors.append("indigo")
+>>> colors
+['red', 'orange', 'yellow', 'blue', 'indigo']
+
+```
+`.append()` is both shorter and more descriptive than using `.insert()` this way, and is generally considered the more Pythonic way of added an element to the end of a list.
+
+***list.extend()***
+
+The list.extend() method is used to add several new elements to the end of a list:
+
+```python
+>>> colors.extend(["violet", "ultraviolet"])
+>>> colors
+['red', 'orange', 'yellow', 'blue', 'indigo', 'violet', 'ultraviolet']
+```
+
+`.extends` takes a single parameter that must be an iterable type. The elements of the iterable are appended to the list in the same order that they appear in the argument passed to `.extend()`.
+
+
+### Lists of numbers
+One very common operation with lists of numbers is to add up all the values to get the total.
+
+
+```python
+>>> nums = [1, 2, 3, 4, 5]
+>>> total = 0
+>>>    for number in nums:
+          total = total + number
+...
+>>> total
+15
+```
+
+The fact that sum(), min(), and max() are all built-in to Python tells you that they are used frequently. Chances are, you’ll ﬁnd yourself using them quite a bit in your own programs!
+
+
+### List Comprehensions
+
+```python
+>>> numbers = (1, 2, 3, 4, 5)
+>>> squares = [num**2 for num in numbers]
+>>> squares
+[1, 4, 9, 16, 25
+```
+
+A list comprehension is a short-hand for a for loop. In the example above, a tuple literal containing ﬁve numbers is created and assigned to the numbers variable. On the second line, a list comprehension loops over each number in numbers, squares each number, and adds it to a new list called square
+
+To create the sqaures list using a traditional for loop involves ﬁrst creating an empty list, looping over the numbers in numbers, and appending the square of each number to the list:
+
+```python
+
+squares=[]
+
+for num in numbers:
+    squares.append(num*2)
+
+squares
+[1,4,9,16,25]
+```
