@@ -902,3 +902,133 @@ for num in numbers:
 squares
 [1,4,9,16,25]
 ```
+
+### Creating a List
+
+```python
+animals=["lion","tiger", "cheetah"]
+large_cats=animals
+large_cats.append("fox")
+animals
+```
+
+This is a quirk of object-oriented programming, but it’s by design. When you say large_cats = animals, the large_cats and animals variables both refer to the same object.
+
+A variable name is really just a reference to a speciﬁc location in computer memory. Instead of copying all the contents of the list object and creating a new list, large_cats = animals assigns the memory location referenced by animals to large_cats. That is, both variables now refer to the same object in memory, and any changes made to one will
+aﬀect the other.
+
+
+```python
+>>> animals = ["lion", "tiger", "frumious Bandersnatch"]
+>>> large_cats = animals[:]
+>>> large_cats.append("leopard")
+>>> large_cats
+['lion', 'tiger', 'frumious Bandersnatch', 'leopard']
+>>> animals
+["lion", "tiger", "frumious Bandersnatch"]
+```
+Since no index numbers are speciﬁed in the [:] slice, every element of the list is returned from beginning to end. The large_cats list now has the same elements as animals, and in the same order, but you can `.append()` items to it without changing the list assigned to animals.
+
+If you want to make a copy of a list of lists, you can do so using the [:] notation you saw earlier:
+
+```python
+>>> matrix1 = [[1, 2], [3, 4]]
+>>> matrix2 = matrix1[:]
+>>> matrix2[0] = [5, 6]
+>>> matrix2
+[[5, 6], [3, 4]]
+>>> matrix1
+[[1, 2], [3, 4]]
+
+```
+
+### Sorting Lists
+
+Lits have `.sort()` method that sorts all of the items in ascending order. By default, the list is sorted in alphabetical or numerical order, depending on the type of elements in the list:
+
+```python
+
+colors=['red','yellow','green','blue']
+colors.sort()
+colors
+['blue','green','red','yellow']
+```
+
+```python
+numbers=[1,10,5,3]
+numbers.sort()
+numbers
+[1,3,5,10]
+```
+Notice that `.sort()` sorts the list in place , so you don't need to assign it's a result to anything.
+
+### Store Relationships in Dictionaries
+
+### What is a Dictionary
+
+Python dictionaries, like lists and tuples, store a collection of objects. However, instead of storing objects in a sequence, dictionaries hold information in pairs of data called key-value pairs. That is, each object in a dictionary has two parts.
+
+The *key* in a key-value pair is a unique name that identiﬁes the *value* part of the pair.
+
+
+```python
+"California" "Sacremnto"
+"New York"    "Albany"
+"Texas" "Austin"
+
+```
+In the table above, the keys of the dictionary are the names of the states, and the values of the dictionary are the names of the capitals.
+
+```python
+1 "Sunday"
+"red" 12:45pm
+17 True
+
+```
+### Creating Dictionaries
+
+```python
+capitals={
+    "California":"Sacremento",
+    "New York":"Albany",
+    "Texas":"Austin"
+}
+
+```
+
+You can create an empty dictionary using either a literal or dict():
+
+```python
+>>> {}
+{}
+>>> dict()
+{}
+```
+
+### Accessing Dictionary Values
+
+```python
+capitals["Texas"]
+'Austin'
+```
+```python
+capitals_list[0]
+'Sacramento'
+
+capitals_list[2]
+'Austin'
+```
+
+### Adding and Removing Values in a Dictionary
+
+```python
+capitals["Colorado"]="Denver"
+```
+
+First you use the square bracket notation with "Colorado" as the key, as if you were looking up the value. Then you use the assignment operator = to assign the value "Denver" to the new key.
+
+```python
+capitals
+{'California': 'Sacramento', 'New York': 'Albany', 'Texas': 'Austin', 'Colorado': 'Denver'}
+
+```
