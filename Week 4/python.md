@@ -1032,3 +1032,18 @@ capitals
 {'California': 'Sacramento', 'New York': 'Albany', 'Texas': 'Austin', 'Colorado': 'Denver'}
 
 ```
+
+
+### Summary
+
+Lists, such as `[1, 2, 3, 4]`, are mutable sequences of objects. Youcan interact with lists using various list methods, such as `.append()`,
+`.remove()`, and `.extend()`. Lists can be sorted using the `.sort()` method.
+
+You can access individual elements of a list using subscript notation, just like strings. Slicing notation also works with lists.
+
+Tuples, like lists, are sequences of objects. The big diﬀerence between lists and tuples is that tuples are immutable. Once you create a tuple, it cannot be changed. Just like lists, you can access elements by index
+and using slicing notation.
+
+Dictionaries store data as key-value pairs. They are not sequences, so you cannot access elements by index. Instead, you access elements by their key. Dictionaries are great for storing relationships, or when you need quick access to data. Like lists, dictionaries are mutable.
+
+Lists, tuples and dictionaries are all iterable, meaning they can be looped over.
