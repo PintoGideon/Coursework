@@ -291,7 +291,4 @@ tributes: .length and .width. Add an .area() method to the class that returns th
 
 
 
-Then write a Square class that inherits from the Rectangle class and
-is instantiated with a single attribute called .side_length. Test
-your Square class by instantiating a Square with a .side_length of 4.
-Calling .area() should return 16
+Then write a Square class that inherits from the Rectangle class and is instantiated with a single attribute called .side_length. Test your Square class by instantiating a Square with a .side_length of 4. Calling .area() should return 16
