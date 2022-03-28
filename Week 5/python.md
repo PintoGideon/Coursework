@@ -277,6 +277,23 @@ miles.speak("Grr")
 'Miles says Grr'
 ```
 
+Sometimes it makes sense to completely override a method from a parent class. But in this instance, we don’t want the JackRussellTerrier class to lose any changes that might be made to the formatting of the
+output string of Dog.speak().
+
+To do this, you still need to deﬁne a `.speak()` method on the child JackRussellTerrier class. But instead of explicitly deﬁning the output string, you need to call the Dog class’s `.speak()` inside of the child class’s `.speak()` using the same arguments that you passed to
+`JackRussellTerrier.speak()`.
+
+You can access the parent class from inside a method of a child class by using super():
+
+```python
+class JackRussellTerrier(Dog):
+    def speak(self, sound='Arf'):
+        return super().speak(sound)
+
+```
+
+When you call `super().speak(sound)` inside of JackRussellTerrier, Python searches the parent class, Dog, for a `.speak()` method and calls it with the variable sound. Now when you call miles.speak(), you’ll see output reflecting the new formatting in the Dog class:
+
 One thing to keep in mind about class inheritance is that changes to the parent class automatically propogate to child classes.
 
 
@@ -286,9 +303,32 @@ One thing to keep in mind about class inheritance is that changes to the parent 
 ### Sample Task
 
 
-Write a Rectangle class that must be instantiated with two at-
-tributes: .length and .width. Add an .area() method to the class that returns the area (length * width) of the rectangle.
+Write a Rectangle class that must be instantiated with two attributes: .length and .width. Add an .area() method to the class that returns the area (length * width) of the rectangle.
+
+```python
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length=length
+        self.width=width
+
+    def area(self):
+        return self.length * self.width
+    
+
+```
 
 
 
 Then write a Square class that inherits from the Rectangle class and is instantiated with a single attribute called .side_length. Test your Square class by instantiating a Square with a .side_length of 4. Calling .area() should return 16
+
+```python
+class Square(Rectangle):
+    def __init__(self, side_length):
+        super().__init__(side_length, side_length)
+
+
+square=Square(4)
+print(square.area)
+```
+
