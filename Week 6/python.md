@@ -1019,3 +1019,84 @@ with file_path.open(mode="r", encoding="utf-8") as file:
 
 
 
+### Installing Third Party Packages
+
+Python’s package manager pip is used to install and manage third party packages. It is a separate program from Python, although it’s likely that pip was installed on your computer whenever you downloaded and installed Python.
+
+
+With your terminal program open, type in the following command to check whether or not pip is installed on your system:
+
+```python
+$ python3 -m pip --version
+```
+
+If pip is installed, you should see something like the following output displayed in your terminal:
+
+```python
+pip 19.3.1 from c:\users\David\appdata\local\programs\python\
+python38-32\lib\site-packages\pip (python 3.8)
+```
+
+This output indicates that version 19.3.1 of and is linked to the Python 3.8 installation.
+
+### Listing all installed packages
+
+```python
+python3 -m pip list
+```
+
+### Install a Package
+
+```python
+python3 -m pip install requests
+```
+
+Notice that pip ﬁrst tells you that it is “Collecting requests.” You will see the URL that pip is using to install the package from, as well as a progress bar indicating the progress of the download.
+
+After that, you will see that pip installs four more packages: chardet, certifi, idna and urllib3. These packages are dependencies of requests. That means that requests requires these packages to be installed in order for it to work properly.
+
+### Installing packages with specific versions
+
+
+To install the latest version of `requests` whose version number is 2 or greater
+
+```python
+python3 -m pip install requests>=2.0
+```
+
+To install the latest version that is less than equal or equal to some number,
+```python
+python3 -m pip install requests<=3.0
+```
+
+The <= and >= version specifiers are inclusive because they include the version number that follows the specifier.
+
+Exclusive versions < and > exist as well.
+
+```python
+python3 -m pip install requests<3.0
+```
+Finally, you can pin dependencies to a speciﬁc version with the version speciﬁer:
+
+```python
+python3 -m pip install requests==2.22.0
+```
+
+
+### Show Package Details
+
+```python
+python3 -m pip show requests
+```
+
+### Pitfalls of Third Party Packages
+
+The beauty of third-party packages is that they give you the ability to add functionality to your project without having to implement everything from scratch. This oﬀers massive boosts in productivity.
+
+But with great power comes great responsibility. As soon as you include someone else’s package in your project, you are placing an enormous amount of trust in those responsible for developing and maintaining the package. By using a package you did not develop, you lose control over certainvaspects of your project. In particular, the maintainers of a packagevmay release a new version that introduces changes that are incompatible with the version you use in your project.
+
+
+By default, pip installs the latest release of a package, so if you distribute your code to someone else and they install a newer version ofva package required by your project, they may not be able to run your code. This presents a signiﬁcant challenge, for both the end user and yourself. Fortunately, Python comes with a ﬁx for this all-to-common problem: virtual environments.
+
+### I will cover virtual environments in depth at a later time.
+
