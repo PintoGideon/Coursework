@@ -946,3 +946,76 @@ file.close()
 Each row of the CSV ﬁle is returned as a list of strings. To recover the daily_temperatures list of lists, you’ll need to convert each list of strings to a list of integers using a list comprehension.
 
 
+### Reading and Writing CSV Files with Headers
+
+```text
+name,department,salary
+Lee,Operations,75000.00
+Jane,Engineering,85000.00
+Diego,Sales,80000.00
+```
+
+It’s possible to read CSV ﬁles such as the one above using csv.reader(), but you have to keep track of the header row, and each row is returned as a list without the ﬁeld names attached to it. It makes more sense to return each row as a dictionary whose keys are the ﬁeld names and values are the ﬁeld values in the row. This is precisely what csv.DictReater objects do!
+
+Create a new file called employees.csv.
+
+```python
+file_path= Path.home()/"employees.csv"
+file=file_path.open(mode="r", encoding="utf-8")
+reader= csv.DictReader(file)
+```
+
+```python
+reader.fieldnames
+['name','deparment','salary']
+```
+
+Just like csv.reader objects, DictReaders objects are iterable
+
+```python
+for row in reader:
+    print(row)
+
+
+file.close()
+
+#{'name': 'Lee', 'department': 'Operations', 'salary': '75000.000'}
+# {'name': 'Jane', 'department': 'Engineering', 'salary': '85000.00'}
+#{'name': 'Diego', 'department': 'Sales', 'salary': '80000.00'}
+```
+
+
+Notice that the salary ﬁeld gets read as a string. Since CSV ﬁles are plain text ﬁles, the values are always read as strings. You’ll need to convert the strings to diﬀerent data types as needed.
+
+```python
+def process_row(row):
+    row["salary"]=float(row["salary"])
+    return row
+
+with file_path.open(mode="r", encoding="utf-8") as file:
+    reader=csv.DictReader(file)
+    for row in reader:
+        print(process_row(row))
+
+
+# {'name': 'Lee', 'department': 'Operations', 'salary': 75000.0}
+
+# {'name': 'Jane', 'department': 'Engineering', 'salary': 85000.0}
+
+# {'name': 'Diego', 'department': 'Sales', 'salary': 80000.0}
+```
+ You can write csv files with headers using csv.DictWriter class, which writes dictionaries with shared keys to rows in a csv file.
+
+ ```python
+ people = [{"name":"Vernoica","age":29},{"name":"Audrey","age":32}]
+
+ file_path=Path.home() / "people.csv"
+
+ file= file_path.open(mode="w", encoding="utf-8")
+ writer = csv.DictWriter(file, fieldnames=["name","age"])
+ ```
+
+ When you instantiate a new DictWriter object, the ﬁrst parameter is the ﬁle object for writing the CSV data. The fieldnames parameter, which is required, is a list of strings of the ﬁeld names.
+
+
+
