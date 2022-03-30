@@ -1098,5 +1098,31 @@ But with great power comes great responsibility. As soon as you include someone 
 
 By default, pip installs the latest release of a package, so if you distribute your code to someone else and they install a newer version ofva package required by your project, they may not be able to run your code. This presents a signiﬁcant challenge, for both the end user and yourself. Fortunately, Python comes with a ﬁx for this all-to-common problem: virtual environments.
 
+
+```python
+python3.8 -m venv env
+source env/bin/activate
+```
+You’ve now created a folder called venv that includes a full Python install, and your shell is now set up to call this local Python version when you run the python command.
+
+### Requirements.txt
+
+requirements.txt is a special file that we use to tell pip, the Python package manager, which dependencies to install. The format is simple: you can create one manually by putting each dependency you import into a text file named requirements.txt, one dependency on each line.
+
+Alternatively, you can install each dependency in your virtualenv using pip. Once you’re done (your application stops complaining about missing imports), you can run:
+
+```python
+pip freeze > requirements.txt
+```
+This will automatically generate a requirements.txt file for you, using the specific version of each dependency you installed in your virtualenv.
+
+Later on, when you move your Python application to a new virtualenv, a new computer, or deploy it to the world, you can bring all your dependencies with you with requirements.txt. To install all your requirements again in a new virtual environment you can simply run:
+
+```python
+pip install -r requirments.txt
+```
+
+
+
 ### I will cover virtual environments in depth at a later time.
 
